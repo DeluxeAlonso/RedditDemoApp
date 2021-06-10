@@ -26,8 +26,9 @@ final class LoginInteractor: LoginInteractorProtocol {
         authClient.getAccessToken(credential: credential, code: code, redirectUri: redirectUri) { result in
             switch result {
             case .success(let response):
-                // Save token
-                completion(.success(response.accessToken))
+                let accessToken = response.accessToken
+                AuthenticationManager.shared.accessToken = accessToken
+                completion(.success(accessToken))
             case .failure(let error):
                 completion(.failure(error))
             }
