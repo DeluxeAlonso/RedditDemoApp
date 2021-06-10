@@ -19,6 +19,7 @@
 		E268CD472671DB2900D95FA8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD462671DB2900D95FA8 /* LoginCoordinator.swift */; };
 		E268CD492671DB3300D95FA8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD482671DB3300D95FA8 /* LoginInteractor.swift */; };
 		E268CD4B2671DB3E00D95FA8 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD4A2671DB3E00D95FA8 /* LoginProtocols.swift */; };
+		E268CD4E2671DBAF00D95FA8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD4D2671DBAF00D95FA8 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E268CD462671DB2900D95FA8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		E268CD482671DB3300D95FA8 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		E268CD4A2671DB3E00D95FA8 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		E268CD4D2671DBAF00D95FA8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +115,17 @@
 		E268CD412671DADA00D95FA8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E268CD4C2671DB9E00D95FA8 /* Protocols */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E268CD4C2671DB9E00D95FA8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E268CD4D2671DBAF00D95FA8 /* Coordinator.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 			files = (
 				E268CD4B2671DB3E00D95FA8 /* LoginProtocols.swift in Sources */,
 				E268CD492671DB3300D95FA8 /* LoginInteractor.swift in Sources */,
+				E268CD4E2671DBAF00D95FA8 /* Coordinator.swift in Sources */,
 				E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */,
 				E268CD2B2671D9B400D95FA8 /* ViewController.swift in Sources */,
 				E268CD472671DB2900D95FA8 /* LoginCoordinator.swift in Sources */,

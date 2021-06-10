@@ -11,4 +11,4 @@ protocol LoginViewModelProtocol {}
 
 protocol LoginInteractorProtocol {}
 
-protocol LoginCoordinatorProtocol {}
+protocol LoginCoordinatorProtocol: Coordinator {}
