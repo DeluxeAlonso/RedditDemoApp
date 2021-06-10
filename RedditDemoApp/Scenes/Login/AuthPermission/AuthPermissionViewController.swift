@@ -32,6 +32,10 @@ class AuthPermissionViewController: UIViewController, Storyboarded {
     weak var coordinator: AuthPermissionCoordinatorProtocol?
     weak var delegate: AuthPermissionViewControllerDelegate?
 
+    deinit {
+        print("dkfslfs")
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -44,16 +48,20 @@ class AuthPermissionViewController: UIViewController, Storyboarded {
     // MARK: - Private
 
     private func setupUI() {
-        NotificationCenter.default.addObserver(forName: CustomNotification.authCodeReceived.name,
-                                               object: nil, queue: .current) { notification in
-            let code = notification.userInfo!["code"] as? String
-            self.coordinator?.dismiss(completion: {
-                self.delegate?.authPermissionViewController(self, didReceiveAuthorization: code!)
-            })
-        }
-
+        setupObservers()
         setupNavigationBar()
         setupWebView()
+    }
+
+    private func setupObservers() {
+        NotificationCenter.default.addObserver(forName: CustomNotification.authCodeReceived.name,
+                                               object: nil, queue: .current) { [weak self] notification in
+            guard let self = self else { return }
+            guard let code = notification.userInfo?["code"] as? String else { return }
+            self.coordinator?.dismiss(completion: {
+                self.delegate?.authPermissionViewController(self, didReceiveAuthorization: code)
+            })
+        }
     }
 
     private func setupNavigationBar() {

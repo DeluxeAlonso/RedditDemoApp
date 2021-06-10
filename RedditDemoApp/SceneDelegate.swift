@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
 
-        mainCoordinator = LoginCoordinator(navigationController: UINavigationController())
+        mainCoordinator = AppCoordinator(navigationController: UINavigationController())
         mainCoordinator.start()
 
         window?.rootViewController = mainCoordinator.navigationController
@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               let code = queryComponents["code"] else {
             return
         }
+        // TODO - Move this logic to authentication manager
         NotificationCenter.default.post(name: CustomNotification.authCodeReceived.name,
                                         object: nil, userInfo: ["code": code])
     }

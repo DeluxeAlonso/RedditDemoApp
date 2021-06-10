@@ -51,6 +51,12 @@
 		E268CDAA2671ED5500D95FA8 /* ShrinkingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDA92671ED5500D95FA8 /* ShrinkingButton.swift */; };
 		E268CDAC2671EDAA00D95FA8 /* SpinnerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDAB2671EDAA00D95FA8 /* SpinnerLayer.swift */; };
 		E268CDAE2671EE0E00D95FA8 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDAD2671EE0E00D95FA8 /* CGRect+Center.swift */; };
+		E268CDB32671EF7A00D95FA8 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDB02671EF7A00D95FA8 /* KeychainSwift.swift */; };
+		E268CDB42671EF7A00D95FA8 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDB12671EF7A00D95FA8 /* KeychainSwiftAccessOptions.swift */; };
+		E268CDB52671EF7A00D95FA8 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDB22671EF7A00D95FA8 /* TegKeychainConstants.swift */; };
+		E268CDB72671EFBA00D95FA8 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDB62671EFBA00D95FA8 /* KeychainStorage.swift */; };
+		E268CDBB2671EFFB00D95FA8 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */; };
+		E268CDBD2671F10000D95FA8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +106,12 @@
 		E268CDA92671ED5500D95FA8 /* ShrinkingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkingButton.swift; sourceTree = "<group>"; };
 		E268CDAB2671EDAA00D95FA8 /* SpinnerLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerLayer.swift; sourceTree = "<group>"; };
 		E268CDAD2671EE0E00D95FA8 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
+		E268CDB02671EF7A00D95FA8 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		E268CDB12671EF7A00D95FA8 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
+		E268CDB22671EF7A00D95FA8 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
+		E268CDB62671EFBA00D95FA8 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,7 @@
 		E268CD252671D9B400D95FA8 /* RedditDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				E268CDB92671EFED00D95FA8 /* Managers */,
 				E268CDA82671ED4300D95FA8 /* ViewComponents */,
 				E268CD3D2671DA9700D95FA8 /* Scenes */,
 				E268CD3F2671DAB600D95FA8 /* Networking */,
@@ -142,6 +155,7 @@
 				E268CD342671D9B800D95FA8 /* LaunchScreen.storyboard */,
 				E268CD372671D9B800D95FA8 /* Info.plist */,
 				E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */,
+				E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */,
 			);
 			path = RedditDemoApp;
 			sourceTree = "<group>";
@@ -215,6 +229,7 @@
 		E268CD6A2671DCFD00D95FA8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E268CDAF2671EF5600D95FA8 /* Keychain */,
 				E268CD922671E53F00D95FA8 /* Notifications */,
 				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
 				E268CD832671E1C100D95FA8 /* AppConstants.swift */,
@@ -317,6 +332,33 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		E268CDAF2671EF5600D95FA8 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDB82671EFBD00D95FA8 /* KeychainSwift */,
+				E268CDB62671EFBA00D95FA8 /* KeychainStorage.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		E268CDB82671EFBD00D95FA8 /* KeychainSwift */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDB02671EF7A00D95FA8 /* KeychainSwift.swift */,
+				E268CDB12671EF7A00D95FA8 /* KeychainSwiftAccessOptions.swift */,
+				E268CDB22671EF7A00D95FA8 /* TegKeychainConstants.swift */,
+			);
+			path = KeychainSwift;
+			sourceTree = "<group>";
+		};
+		E268CDB92671EFED00D95FA8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -391,8 +433,10 @@
 				E268CD4B2671DB3E00D95FA8 /* LoginProtocols.swift in Sources */,
 				E268CD8E2671E4FB00D95FA8 /* AuthPermissionViewController.swift in Sources */,
 				E268CD692671DCA600D95FA8 /* CharacterSet+Filtering.swift in Sources */,
+				E268CDBB2671EFFB00D95FA8 /* AuthenticationManager.swift in Sources */,
 				E268CD492671DB3300D95FA8 /* LoginInteractor.swift in Sources */,
 				E268CD7A2671DE1300D95FA8 /* AuthClientProtocol.swift in Sources */,
+				E268CDBD2671F10000D95FA8 /* AppCoordinator.swift in Sources */,
 				E268CD842671E1C100D95FA8 /* AppConstants.swift in Sources */,
 				E268CD9A2671E60900D95FA8 /* UIView+Fade.swift in Sources */,
 				E268CD912671E4FB00D95FA8 /* AuthPermissionProtocols.swift in Sources */,
@@ -403,7 +447,9 @@
 				E268CD8F2671E4FB00D95FA8 /* AuthPermissionCoordinator.swift in Sources */,
 				E268CD902671E4FB00D95FA8 /* AuthPermissionWebViewNavigation.swift in Sources */,
 				E268CDA42671ECD500D95FA8 /* PostsViewController.swift in Sources */,
+				E268CDB52671EF7A00D95FA8 /* TegKeychainConstants.swift in Sources */,
 				E268CDAA2671ED5500D95FA8 /* ShrinkingButton.swift in Sources */,
+				E268CDB42671EF7A00D95FA8 /* KeychainSwiftAccessOptions.swift in Sources */,
 				E268CD712671DD5500D95FA8 /* APIError.swift in Sources */,
 				E268CD4E2671DBAF00D95FA8 /* Coordinator.swift in Sources */,
 				E268CDA72671ECF800D95FA8 /* PostDetailViewController.swift in Sources */,
@@ -424,8 +470,10 @@
 				E268CD762671DE0400D95FA8 /* AuthProvider.swift in Sources */,
 				E268CD662671DCA600D95FA8 /* Dictionary+Format.swift in Sources */,
 				E268CD672671DCA600D95FA8 /* ErrorDescriptable.swift in Sources */,
+				E268CDB32671EF7A00D95FA8 /* KeychainSwift.swift in Sources */,
 				E268CD782671DE0C00D95FA8 /* AuthClient.swift in Sources */,
 				E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */,
+				E268CDB72671EFBA00D95FA8 /* KeychainStorage.swift in Sources */,
 				E268CD682671DCA600D95FA8 /* URLRequest+Headers.swift in Sources */,
 				E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */,
 			);
