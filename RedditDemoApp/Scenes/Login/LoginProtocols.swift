@@ -5,10 +5,33 @@
 //  Created by Alonso on 10/06/21.
 //
 
-import Foundation
+import UIKit
 
-protocol LoginViewModelProtocol {}
+protocol LoginViewModelProtocol {
 
-protocol LoginInteractorProtocol {}
+    var startLoading: Bindable<Bool> { get }
+    var didReceiveError: Bindable<Error?> { get }
 
-protocol LoginCoordinatorProtocol: Coordinator {}
+    var loginDidFinish: (() -> Void)? { get set }
+
+    func getAccessToken(with code: String)
+    func buildAuthPermissionURL() -> URL?
+
+}
+
+protocol LoginInteractorProtocol {
+
+    func getAccessToken(credential: String,
+                        code: String,
+                        completion: @escaping (Result<String, Error>) -> Void)
+
+}
+
+protocol LoginCoordinatorProtocol: Coordinator {
+
+    func showAuthPermission(for authPermissionURL: URL?,
+                            and authPermissionDelegate: AuthPermissionViewControllerDelegate)
+
+    func showMainScreen(from window: UIWindow?)
+
+}

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD262671D9B400D95FA8 /* AppDelegate.swift */; };
 		E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD282671D9B400D95FA8 /* SceneDelegate.swift */; };
-		E268CD2B2671D9B400D95FA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2A2671D9B400D95FA8 /* ViewController.swift */; };
-		E268CD2E2671D9B400D95FA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268CD2C2671D9B400D95FA8 /* Main.storyboard */; };
 		E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */; };
 		E268CD332671D9B800D95FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E268CD322671D9B800D95FA8 /* Assets.xcassets */; };
 		E268CD362671D9B800D95FA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268CD342671D9B800D95FA8 /* LaunchScreen.storyboard */; };
@@ -32,14 +30,33 @@
 		E268CD782671DE0C00D95FA8 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD772671DE0C00D95FA8 /* AuthClient.swift */; };
 		E268CD7A2671DE1300D95FA8 /* AuthClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD792671DE1200D95FA8 /* AuthClientProtocol.swift */; };
 		E268CD7D2671DE6A00D95FA8 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD7C2671DE6A00D95FA8 /* AccessTokenResponse.swift */; };
+		E268CD7F2671E07B00D95FA8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268CD7E2671E07B00D95FA8 /* Login.storyboard */; };
+		E268CD822671E0CD00D95FA8 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD812671E0CD00D95FA8 /* Storyboarded.swift */; };
+		E268CD842671E1C100D95FA8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD832671E1C100D95FA8 /* AppConstants.swift */; };
+		E268CD872671E43700D95FA8 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD862671E43700D95FA8 /* String+Base64.swift */; };
+		E268CD8D2671E4FB00D95FA8 /* AuthPermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD882671E4FB00D95FA8 /* AuthPermissionViewModel.swift */; };
+		E268CD8E2671E4FB00D95FA8 /* AuthPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD892671E4FB00D95FA8 /* AuthPermissionViewController.swift */; };
+		E268CD8F2671E4FB00D95FA8 /* AuthPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD8A2671E4FB00D95FA8 /* AuthPermissionCoordinator.swift */; };
+		E268CD902671E4FB00D95FA8 /* AuthPermissionWebViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD8B2671E4FB00D95FA8 /* AuthPermissionWebViewNavigation.swift */; };
+		E268CD912671E4FB00D95FA8 /* AuthPermissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD8C2671E4FB00D95FA8 /* AuthPermissionProtocols.swift */; };
+		E268CD962671E55B00D95FA8 /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD932671E55B00D95FA8 /* CustomNotification.swift */; };
+		E268CD972671E55B00D95FA8 /* NotificationNameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD942671E55B00D95FA8 /* NotificationNameable.swift */; };
+		E268CD982671E55B00D95FA8 /* Notification+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD952671E55B00D95FA8 /* Notification+RawRepresentable.swift */; };
+		E268CD9A2671E60900D95FA8 /* UIView+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD992671E60900D95FA8 /* UIView+Fade.swift */; };
+		E268CD9C2671E6DA00D95FA8 /* URL+QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD9B2671E6DA00D95FA8 /* URL+QueryParameters.swift */; };
+		E268CD9F2671E9D200D95FA8 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268CD9E2671E9D200D95FA8 /* Posts.storyboard */; };
+		E268CDA12671EB1300D95FA8 /* PostsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDA02671EB1300D95FA8 /* PostsSplitViewController.swift */; };
+		E268CDA42671ECD500D95FA8 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDA32671ECD500D95FA8 /* PostsViewController.swift */; };
+		E268CDA72671ECF800D95FA8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDA62671ECF800D95FA8 /* PostDetailViewController.swift */; };
+		E268CDAA2671ED5500D95FA8 /* ShrinkingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDA92671ED5500D95FA8 /* ShrinkingButton.swift */; };
+		E268CDAC2671EDAA00D95FA8 /* SpinnerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDAB2671EDAA00D95FA8 /* SpinnerLayer.swift */; };
+		E268CDAE2671EE0E00D95FA8 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDAD2671EE0E00D95FA8 /* CGRect+Center.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E268CD232671D9B400D95FA8 /* RedditDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E268CD262671D9B400D95FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E268CD282671D9B400D95FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E268CD2A2671D9B400D95FA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E268CD2D2671D9B400D95FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E268CD302671D9B400D95FA8 /* RedditDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RedditDemoApp.xcdatamodel; sourceTree = "<group>"; };
 		E268CD322671D9B800D95FA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E268CD352671D9B800D95FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +79,27 @@
 		E268CD772671DE0C00D95FA8 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		E268CD792671DE1200D95FA8 /* AuthClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientProtocol.swift; sourceTree = "<group>"; };
 		E268CD7C2671DE6A00D95FA8 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		E268CD7E2671E07B00D95FA8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E268CD812671E0CD00D95FA8 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		E268CD832671E1C100D95FA8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		E268CD862671E43700D95FA8 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		E268CD882671E4FB00D95FA8 /* AuthPermissionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPermissionViewModel.swift; sourceTree = "<group>"; };
+		E268CD892671E4FB00D95FA8 /* AuthPermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPermissionViewController.swift; sourceTree = "<group>"; };
+		E268CD8A2671E4FB00D95FA8 /* AuthPermissionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPermissionCoordinator.swift; sourceTree = "<group>"; };
+		E268CD8B2671E4FB00D95FA8 /* AuthPermissionWebViewNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPermissionWebViewNavigation.swift; sourceTree = "<group>"; };
+		E268CD8C2671E4FB00D95FA8 /* AuthPermissionProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPermissionProtocols.swift; sourceTree = "<group>"; };
+		E268CD932671E55B00D95FA8 /* CustomNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
+		E268CD942671E55B00D95FA8 /* NotificationNameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNameable.swift; sourceTree = "<group>"; };
+		E268CD952671E55B00D95FA8 /* Notification+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+RawRepresentable.swift"; sourceTree = "<group>"; };
+		E268CD992671E60900D95FA8 /* UIView+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fade.swift"; sourceTree = "<group>"; };
+		E268CD9B2671E6DA00D95FA8 /* URL+QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParameters.swift"; sourceTree = "<group>"; };
+		E268CD9E2671E9D200D95FA8 /* Posts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
+		E268CDA02671EB1300D95FA8 /* PostsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsSplitViewController.swift; sourceTree = "<group>"; };
+		E268CDA32671ECD500D95FA8 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		E268CDA62671ECF800D95FA8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		E268CDA92671ED5500D95FA8 /* ShrinkingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkingButton.swift; sourceTree = "<group>"; };
+		E268CDAB2671EDAA00D95FA8 /* SpinnerLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerLayer.swift; sourceTree = "<group>"; };
+		E268CDAD2671EE0E00D95FA8 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,13 +132,12 @@
 		E268CD252671D9B400D95FA8 /* RedditDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				E268CDA82671ED4300D95FA8 /* ViewComponents */,
 				E268CD3D2671DA9700D95FA8 /* Scenes */,
 				E268CD3F2671DAB600D95FA8 /* Networking */,
 				E268CD412671DADA00D95FA8 /* Helpers */,
 				E268CD262671D9B400D95FA8 /* AppDelegate.swift */,
 				E268CD282671D9B400D95FA8 /* SceneDelegate.swift */,
-				E268CD2A2671D9B400D95FA8 /* ViewController.swift */,
-				E268CD2C2671D9B400D95FA8 /* Main.storyboard */,
 				E268CD322671D9B800D95FA8 /* Assets.xcassets */,
 				E268CD342671D9B800D95FA8 /* LaunchScreen.storyboard */,
 				E268CD372671D9B800D95FA8 /* Info.plist */,
@@ -113,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E268CD3E2671DA9D00D95FA8 /* Login */,
+				E268CD9D2671E9B300D95FA8 /* Posts */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -120,11 +158,13 @@
 		E268CD3E2671DA9D00D95FA8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E268CD802671E08200D95FA8 /* AuthPermission */,
 				E268CD422671DB0F00D95FA8 /* LoginViewController.swift */,
 				E268CD442671DB1A00D95FA8 /* LoginViewModel.swift */,
 				E268CD462671DB2900D95FA8 /* LoginCoordinator.swift */,
 				E268CD482671DB3300D95FA8 /* LoginInteractor.swift */,
 				E268CD4A2671DB3E00D95FA8 /* LoginProtocols.swift */,
+				E268CD7E2671E07B00D95FA8 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -145,6 +185,7 @@
 		E268CD412671DADA00D95FA8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E268CD852671E42D00D95FA8 /* Extensions */,
 				E268CD6A2671DCFD00D95FA8 /* Utils */,
 				E268CD4C2671DB9E00D95FA8 /* Protocols */,
 			);
@@ -155,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				E268CD4D2671DBAF00D95FA8 /* Coordinator.swift */,
+				E268CD812671E0CD00D95FA8 /* Storyboarded.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -173,7 +215,9 @@
 		E268CD6A2671DCFD00D95FA8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E268CD922671E53F00D95FA8 /* Notifications */,
 				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
+				E268CD832671E1C100D95FA8 /* AppConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -202,6 +246,75 @@
 				E268CD7C2671DE6A00D95FA8 /* AccessTokenResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		E268CD802671E08200D95FA8 /* AuthPermission */ = {
+			isa = PBXGroup;
+			children = (
+				E268CD8A2671E4FB00D95FA8 /* AuthPermissionCoordinator.swift */,
+				E268CD8C2671E4FB00D95FA8 /* AuthPermissionProtocols.swift */,
+				E268CD892671E4FB00D95FA8 /* AuthPermissionViewController.swift */,
+				E268CD882671E4FB00D95FA8 /* AuthPermissionViewModel.swift */,
+				E268CD8B2671E4FB00D95FA8 /* AuthPermissionWebViewNavigation.swift */,
+			);
+			path = AuthPermission;
+			sourceTree = "<group>";
+		};
+		E268CD852671E42D00D95FA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E268CD862671E43700D95FA8 /* String+Base64.swift */,
+				E268CD992671E60900D95FA8 /* UIView+Fade.swift */,
+				E268CD9B2671E6DA00D95FA8 /* URL+QueryParameters.swift */,
+				E268CDAD2671EE0E00D95FA8 /* CGRect+Center.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E268CD922671E53F00D95FA8 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E268CD932671E55B00D95FA8 /* CustomNotification.swift */,
+				E268CD952671E55B00D95FA8 /* Notification+RawRepresentable.swift */,
+				E268CD942671E55B00D95FA8 /* NotificationNameable.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		E268CD9D2671E9B300D95FA8 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDA52671ECDD00D95FA8 /* Detail */,
+				E268CDA22671ECBE00D95FA8 /* List */,
+				E268CD9E2671E9D200D95FA8 /* Posts.storyboard */,
+				E268CDA02671EB1300D95FA8 /* PostsSplitViewController.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		E268CDA22671ECBE00D95FA8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDA32671ECD500D95FA8 /* PostsViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E268CDA52671ECDD00D95FA8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDA62671ECF800D95FA8 /* PostDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E268CDA82671ED4300D95FA8 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E268CDA92671ED5500D95FA8 /* ShrinkingButton.swift */,
+				E268CDAB2671EDAA00D95FA8 /* SpinnerLayer.swift */,
+			);
+			path = ViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +374,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E268CD9F2671E9D200D95FA8 /* Posts.storyboard in Resources */,
 				E268CD362671D9B800D95FA8 /* LaunchScreen.storyboard in Resources */,
 				E268CD332671D9B800D95FA8 /* Assets.xcassets in Resources */,
-				E268CD2E2671D9B400D95FA8 /* Main.storyboard in Resources */,
+				E268CD7F2671E07B00D95FA8 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,18 +389,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				E268CD4B2671DB3E00D95FA8 /* LoginProtocols.swift in Sources */,
+				E268CD8E2671E4FB00D95FA8 /* AuthPermissionViewController.swift in Sources */,
 				E268CD692671DCA600D95FA8 /* CharacterSet+Filtering.swift in Sources */,
 				E268CD492671DB3300D95FA8 /* LoginInteractor.swift in Sources */,
 				E268CD7A2671DE1300D95FA8 /* AuthClientProtocol.swift in Sources */,
+				E268CD842671E1C100D95FA8 /* AppConstants.swift in Sources */,
+				E268CD9A2671E60900D95FA8 /* UIView+Fade.swift in Sources */,
+				E268CD912671E4FB00D95FA8 /* AuthPermissionProtocols.swift in Sources */,
+				E268CDA12671EB1300D95FA8 /* PostsSplitViewController.swift in Sources */,
+				E268CD8D2671E4FB00D95FA8 /* AuthPermissionViewModel.swift in Sources */,
+				E268CDAE2671EE0E00D95FA8 /* CGRect+Center.swift in Sources */,
+				E268CDAC2671EDAA00D95FA8 /* SpinnerLayer.swift in Sources */,
+				E268CD8F2671E4FB00D95FA8 /* AuthPermissionCoordinator.swift in Sources */,
+				E268CD902671E4FB00D95FA8 /* AuthPermissionWebViewNavigation.swift in Sources */,
+				E268CDA42671ECD500D95FA8 /* PostsViewController.swift in Sources */,
+				E268CDAA2671ED5500D95FA8 /* ShrinkingButton.swift in Sources */,
 				E268CD712671DD5500D95FA8 /* APIError.swift in Sources */,
 				E268CD4E2671DBAF00D95FA8 /* Coordinator.swift in Sources */,
+				E268CDA72671ECF800D95FA8 /* PostDetailViewController.swift in Sources */,
 				E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */,
+				E268CD822671E0CD00D95FA8 /* Storyboarded.swift in Sources */,
 				E268CD6C2671DD0800D95FA8 /* Bindable.swift in Sources */,
-				E268CD2B2671D9B400D95FA8 /* ViewController.swift in Sources */,
+				E268CD962671E55B00D95FA8 /* CustomNotification.swift in Sources */,
+				E268CD972671E55B00D95FA8 /* NotificationNameable.swift in Sources */,
 				E268CD472671DB2900D95FA8 /* LoginCoordinator.swift in Sources */,
 				E268CD7D2671DE6A00D95FA8 /* AccessTokenResponse.swift in Sources */,
 				E268CD452671DB1A00D95FA8 /* LoginViewModel.swift in Sources */,
+				E268CD872671E43700D95FA8 /* String+Base64.swift in Sources */,
 				E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */,
+				E268CD982671E55B00D95FA8 /* Notification+RawRepresentable.swift in Sources */,
+				E268CD9C2671E6DA00D95FA8 /* URL+QueryParameters.swift in Sources */,
 				E268CD6F2671DD4B00D95FA8 /* Endpoint.swift in Sources */,
 				E268CD432671DB0F00D95FA8 /* LoginViewController.swift in Sources */,
 				E268CD762671DE0400D95FA8 /* AuthProvider.swift in Sources */,
@@ -302,14 +434,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E268CD2C2671D9B400D95FA8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E268CD2D2671D9B400D95FA8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E268CD342671D9B800D95FA8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsE-dy-lsD" customClass="ShrinkingButton" customModule="RedditDemoApp" customModuleProvider="target">
+                                <rect key="frame" x="188" y="433" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" red="0.19215686269999999" green="0.19215686269999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledBackgroundColor">
+                                        <color key="value" red="0.30980392159999998" green="0.4941176471" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hC8-T4-xqN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NsE-dy-lsD" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="7Fk-r5-LGb"/>
+                            <constraint firstItem="NsE-dy-lsD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="N9G-r3-V0t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="NsE-dy-lsD" id="6z5-od-GfG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="94"/>
+        </scene>
+        <!--Auth Permission View Controller-->
+        <scene sceneID="LCI-ZB-vkU">
+            <objects>
+                <viewController storyboardIdentifier="AuthPermissionViewController" id="BeU-FE-nm9" customClass="AuthPermissionViewController" customModule="RedditDemoApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WwD-8k-vtd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-fB-mKK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="red-kh-lSi">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem image="arrowshape.turn.up.left" catalog="system" id="bzb-6V-a3t" userLabel="Back Bar Button Item">
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="BeU-FE-nm9" id="UNv-5z-S8z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" systemItem="fixedSpace" id="N6S-Q2-xC6"/>
+                                    <barButtonItem image="arrowshape.turn.up.right" catalog="system" id="M64-Ar-KHu" userLabel="Forward Bar Button Item">
+                                        <connections>
+                                            <action selector="forwardButtonAction:" destination="BeU-FE-nm9" id="0po-YP-maG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="FoF-eL-NYp"/>
+                                    <barButtonItem systemItem="refresh" id="Npc-zO-c6q">
+                                        <connections>
+                                            <action selector="reloadButtonAction:" destination="BeU-FE-nm9" id="aBz-ai-rQH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-Fu-2QJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Li-EQ-gUr"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zVe-fB-mKK" firstAttribute="leading" secondItem="WwD-8k-vtd" secondAttribute="leading" id="7Uw-Q2-tos"/>
+                            <constraint firstItem="zVe-fB-mKK" firstAttribute="top" secondItem="8Li-EQ-gUr" secondAttribute="top" id="DoQ-Mj-Eun"/>
+                            <constraint firstItem="red-kh-lSi" firstAttribute="trailing" secondItem="WwD-8k-vtd" secondAttribute="trailing" id="JUj-ZO-qjC"/>
+                            <constraint firstItem="red-kh-lSi" firstAttribute="leading" secondItem="WwD-8k-vtd" secondAttribute="leading" id="K9f-eh-o2a"/>
+                            <constraint firstAttribute="trailing" secondItem="zVe-fB-mKK" secondAttribute="trailing" id="OEQ-RP-G0I"/>
+                            <constraint firstAttribute="trailing" secondItem="Deq-Fu-2QJ" secondAttribute="trailing" id="Ozb-lR-f5k"/>
+                            <constraint firstItem="red-kh-lSi" firstAttribute="bottom" secondItem="8Li-EQ-gUr" secondAttribute="bottom" id="TRP-wc-w9D"/>
+                            <constraint firstItem="red-kh-lSi" firstAttribute="top" secondItem="zVe-fB-mKK" secondAttribute="bottom" id="axF-lc-9WW"/>
+                            <constraint firstItem="Deq-Fu-2QJ" firstAttribute="top" secondItem="8Li-EQ-gUr" secondAttribute="top" id="v0S-Vh-0O2"/>
+                            <constraint firstItem="Deq-Fu-2QJ" firstAttribute="leading" secondItem="WwD-8k-vtd" secondAttribute="leading" id="yBl-7a-gkw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EEz-IS-AaD"/>
+                    <connections>
+                        <outlet property="backButton" destination="bzb-6V-a3t" id="Aee-53-ohW"/>
+                        <outlet property="forwardButton" destination="M64-Ar-KHu" id="dhd-qU-vG3"/>
+                        <outlet property="progressView" destination="Deq-Fu-2QJ" id="c3x-Ta-4ag"/>
+                        <outlet property="reloadButton" destination="Npc-zO-c6q" id="bdv-l9-yzP"/>
+                        <outlet property="webView" destination="zVe-fB-mKK" id="jJP-1F-iA3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tuw-Nf-HvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
