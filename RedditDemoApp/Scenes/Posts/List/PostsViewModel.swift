@@ -12,6 +12,7 @@ final class PostsViewModel: PostsViewModelProtocol {
     private let interactor: PostsInteractorProtocol
 
     private(set) var viewState: Bindable<PostsViewState> = Bindable(.initial)
+    private(set) var didUpdatePost: Bindable<Int?> = Bindable(nil)
     private(set) var didRemovePost: Bindable<Int?> = Bindable(nil)
 
     private var posts: [Post] = []
@@ -34,7 +35,17 @@ final class PostsViewModel: PostsViewModelProtocol {
     }
 
     func markAsRead(at index: Int) {
-
+        let post = posts[index]
+        interactor.markPostAsRead(id: post.id) { result in
+            switch result {
+            case .success:
+                post.read = true
+                self.didUpdatePost.value = index
+            case .failure:
+                // We fail silently
+                break
+            }
+        }
     }
 
     func hidePost(at index: Int) {

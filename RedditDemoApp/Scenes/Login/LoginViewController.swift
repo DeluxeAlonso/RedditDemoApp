@@ -16,6 +16,10 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
     var viewModel: LoginViewModelProtocol?
     weak var coordinator: LoginCoordinatorProtocol?
 
+    deinit {
+        print("LoginViewController")
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -27,6 +31,9 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // We are handling the binding on this method because
+        // we can get the window and scene of this view controller
+        // only after it has been added to the window hierarchy.
         viewModel?.loginDidFinish = { [weak self] in
             guard let self = self else { return }
             self.coordinator?.showMainScreen(from: self)

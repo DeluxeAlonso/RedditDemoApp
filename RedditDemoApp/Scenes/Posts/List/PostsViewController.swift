@@ -19,6 +19,10 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
     var viewModel: PostsViewModelProtocol?
     weak var coordinator: PostsCoordinatorProtocol?
 
+    deinit {
+        print("PostsViewController;dkfdl;")
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -99,7 +103,12 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
             self.tableView.reloadSections([.zero], with: .fade)
             self.tableView.refreshControl?.endRefreshing()
         })
-
+        viewModel?.didUpdatePost.bind({ [weak self] index in
+            guard let index = index else { return }
+            let indexPath = IndexPath(row: index, section: 0)
+            self?.tableView.reloadRows(at: [indexPath], with: .none)
+            self?.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        })
         viewModel?.didRemovePost.bind({ [weak self] index in
             guard let index = index else { return }
             let indexPath = IndexPath(row: index, section: 0)
@@ -152,6 +161,7 @@ extension PostsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
+        viewModel.markAsRead(at: indexPath.row)
         coordinator?.showPostDetail(viewModel.post(at: indexPath.row))
     }
 

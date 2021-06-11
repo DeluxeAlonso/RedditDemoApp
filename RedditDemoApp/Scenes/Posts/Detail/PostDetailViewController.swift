@@ -10,10 +10,15 @@ import UIKit
 class PostDetailViewController: UIViewController, Storyboarded {
 
     @IBOutlet private weak var titleLabel: UILabel!
+
     static var storyboardName: String = "Posts"
 
     var viewModel: PostDetailViewModelProtocol?
     weak var coordinator: PostDetailCoordinatorProtocol?
+
+    deinit {
+        print("PostDetailViewController")
+    }
 
     // MARK: - Initializers
 

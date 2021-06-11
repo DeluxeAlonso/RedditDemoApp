@@ -134,6 +134,7 @@
                 <outlet property="commentsLabel" destination="ZTu-hM-agP" id="40K-h8-SlU"/>
                 <outlet property="dateLabel" destination="TN7-zc-ajv" id="PsQ-xL-BsU"/>
                 <outlet property="descriptionLabel" destination="ShM-Ux-4BC" id="P9V-uw-O0f"/>
+                <outlet property="readMarkImageView" destination="NQz-jf-LPl" id="QUi-5x-Rqe"/>
                 <outlet property="thumbnailImageView" destination="G0Q-IG-8MQ" id="3f2-TU-B4j"/>
             </connections>
             <point key="canvasLocation" x="18.840579710144929" y="124.55357142857142"/>

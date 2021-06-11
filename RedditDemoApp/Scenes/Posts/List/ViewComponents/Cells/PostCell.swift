@@ -24,6 +24,7 @@ class PostCell: UITableViewCell {
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var commentsLabel: UILabel!
+    @IBOutlet private weak var readMarkImageView: UIImageView!
 
     var viewModel: PostCellViewModelProtocol? {
         didSet {
@@ -58,6 +59,8 @@ class PostCell: UITableViewCell {
         descriptionLabel.text = viewModel.title
         dateLabel.text = viewModel.relativeDate
         commentsLabel.text = viewModel.commentCount
+
+        readMarkImageView.isHidden = viewModel.wasRead
 
         if let thumbnailURL = viewModel.thumbnailURL {
             thumbnailImageView.isHidden = false

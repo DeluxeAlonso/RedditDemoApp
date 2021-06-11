@@ -90,7 +90,7 @@ public class CoreDataStack {
 extension CoreDataStack {
 
     struct Constants {
-        static let containerName = "Model"
+        static let containerName = "RedditDemoApp"
     }
 
 }
