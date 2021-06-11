@@ -17,6 +17,12 @@
 		E266BCDC2672C92E00C139BB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCDB2672C92E00C139BB /* Post.swift */; };
 		E266BCDE2672CC9400C139BB /* PostsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCDD2672CC9400C139BB /* PostsViewState.swift */; };
 		E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCE126730E1B00C139BB /* URLSchemeHost.swift */; };
+		E266BCE52673145C00C139BB /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCE42673145C00C139BB /* PostProvider.swift */; };
+		E266BCE7267314EE00C139BB /* ListingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCE6267314EE00C139BB /* ListingResponse.swift */; };
+		E266BCE92673186700C139BB /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCE82673186700C139BB /* PostResponse.swift */; };
+		E266BCEB267318A800C139BB /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCEA267318A800C139BB /* PostClient.swift */; };
+		E266BCED267318B200C139BB /* PostClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCEC267318B200C139BB /* PostClientProtocol.swift */; };
+		E266BCEF26731E7D00C139BB /* GlobalNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCEE26731E7D00C139BB /* GlobalNavigationManager.swift */; };
 		E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD262671D9B400D95FA8 /* AppDelegate.swift */; };
 		E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD282671D9B400D95FA8 /* SceneDelegate.swift */; };
 		E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */; };
@@ -80,6 +86,12 @@
 		E266BCDB2672C92E00C139BB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E266BCDD2672CC9400C139BB /* PostsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewState.swift; sourceTree = "<group>"; };
 		E266BCE126730E1B00C139BB /* URLSchemeHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemeHost.swift; sourceTree = "<group>"; };
+		E266BCE42673145C00C139BB /* PostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
+		E266BCE6267314EE00C139BB /* ListingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingResponse.swift; sourceTree = "<group>"; };
+		E266BCE82673186700C139BB /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		E266BCEA267318A800C139BB /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
+		E266BCEC267318B200C139BB /* PostClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClientProtocol.swift; sourceTree = "<group>"; };
+		E266BCEE26731E7D00C139BB /* GlobalNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNavigationManager.swift; sourceTree = "<group>"; };
 		E268CD232671D9B400D95FA8 /* RedditDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E268CD262671D9B400D95FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E268CD282671D9B400D95FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +163,16 @@
 				E266BCDB2672C92E00C139BB /* Post.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E266BCE326730FCB00C139BB /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				E266BCE42673145C00C139BB /* PostProvider.swift */,
+				E266BCEA267318A800C139BB /* PostClient.swift */,
+				E266BCEC267318B200C139BB /* PostClientProtocol.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		E268CD1A2671D9B400D95FA8 = {
@@ -270,6 +292,7 @@
 		E268CD6D2671DD4000D95FA8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E266BCE326730FCB00C139BB /* Post */,
 				E268CD742671DDF800D95FA8 /* Auth */,
 			);
 			path = Services;
@@ -289,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				E268CD7C2671DE6A00D95FA8 /* AccessTokenResponse.swift */,
+				E266BCE6267314EE00C139BB /* ListingResponse.swift */,
+				E266BCE82673186700C139BB /* PostResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -392,6 +417,7 @@
 		E268CDB92671EFED00D95FA8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E266BCEE26731E7D00C139BB /* GlobalNavigationManager.swift */,
 				E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */,
 			);
 			path = Managers;
@@ -472,6 +498,7 @@
 				E268CD8E2671E4FB00D95FA8 /* AuthPermissionViewController.swift in Sources */,
 				E268CD692671DCA600D95FA8 /* CharacterSet+Filtering.swift in Sources */,
 				E268CDBB2671EFFB00D95FA8 /* AuthenticationManager.swift in Sources */,
+				E266BCE52673145C00C139BB /* PostProvider.swift in Sources */,
 				E268CD492671DB3300D95FA8 /* LoginInteractor.swift in Sources */,
 				E268CD7A2671DE1300D95FA8 /* AuthClientProtocol.swift in Sources */,
 				E268CDBD2671F10000D95FA8 /* AppCoordinator.swift in Sources */,
@@ -479,6 +506,7 @@
 				E268CD9A2671E60900D95FA8 /* UIView+Fade.swift in Sources */,
 				E268CD912671E4FB00D95FA8 /* AuthPermissionProtocols.swift in Sources */,
 				E268CDA12671EB1300D95FA8 /* PostsSplitViewController.swift in Sources */,
+				E266BCED267318B200C139BB /* PostClientProtocol.swift in Sources */,
 				E266BCD72672763200C139BB /* PostDetailCoordinator.swift in Sources */,
 				E266BCDE2672CC9400C139BB /* PostsViewState.swift in Sources */,
 				E268CD8D2671E4FB00D95FA8 /* AuthPermissionViewModel.swift in Sources */,
@@ -495,6 +523,8 @@
 				E268CDB42671EF7A00D95FA8 /* KeychainSwiftAccessOptions.swift in Sources */,
 				E268CD712671DD5500D95FA8 /* APIError.swift in Sources */,
 				E268CD4E2671DBAF00D95FA8 /* Coordinator.swift in Sources */,
+				E266BCEB267318A800C139BB /* PostClient.swift in Sources */,
+				E266BCEF26731E7D00C139BB /* GlobalNavigationManager.swift in Sources */,
 				E268CDA72671ECF800D95FA8 /* PostDetailViewController.swift in Sources */,
 				E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */,
 				E268CD822671E0CD00D95FA8 /* Storyboarded.swift in Sources */,
@@ -516,8 +546,10 @@
 				E268CD662671DCA600D95FA8 /* Dictionary+Format.swift in Sources */,
 				E268CD672671DCA600D95FA8 /* ErrorDescriptable.swift in Sources */,
 				E268CDB32671EF7A00D95FA8 /* KeychainSwift.swift in Sources */,
+				E266BCE92673186700C139BB /* PostResponse.swift in Sources */,
 				E268CD782671DE0C00D95FA8 /* AuthClient.swift in Sources */,
 				E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */,
+				E266BCE7267314EE00C139BB /* ListingResponse.swift in Sources */,
 				E268CDB72671EFBA00D95FA8 /* KeychainStorage.swift in Sources */,
 				E268CD682671DCA600D95FA8 /* URLRequest+Headers.swift in Sources */,
 				E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */,

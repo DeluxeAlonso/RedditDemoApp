@@ -18,7 +18,7 @@ final class PostsCoordinator: NSObject, PostsCoordinatorProtocol {
     }
 
     func start() {
-        let interactor = PostsInteractor()
+        let interactor = PostsInteractor(postClient: PostClient())
         let viewModel = PostsViewModel(interactor: interactor)
 
         let viewController = PostsViewController.instantiate()

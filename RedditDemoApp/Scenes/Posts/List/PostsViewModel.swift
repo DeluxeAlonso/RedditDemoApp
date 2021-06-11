@@ -24,7 +24,14 @@ final class PostsViewModel: PostsViewModelProtocol {
     // MARK: - PostsViewModelProtocol
 
     func getTopPosts() {
-
+        interactor.getTopPosts { result in
+            switch result {
+            case .success(let posts):
+                break
+            case .failure(let error):
+                break
+            }
+        }
     }
 
     func markAsRead(at index: Int) {

@@ -18,6 +18,8 @@ class PostsViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel?.getTopPosts()
     }
 
 }

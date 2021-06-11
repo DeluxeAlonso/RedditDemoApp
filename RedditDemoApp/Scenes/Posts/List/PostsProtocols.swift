@@ -25,6 +25,8 @@ protocol PostsViewModelProtocol {
 
 protocol PostsInteractorProtocol {
 
+    func getTopPosts(completion: @escaping (Result<[Post], Error>) -> Void)
+
 }
 
 protocol PostsCoordinatorProtocol: Coordinator {

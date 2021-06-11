@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, Storyboarded {
         super.viewDidAppear(animated)
         viewModel?.loginDidFinish = { [weak self] in
             guard let self = self else { return }
-            self.coordinator?.showMainScreen(from: self.view.window)
+            self.coordinator?.showMainScreen(from: self)
         }
     }
 

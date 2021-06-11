@@ -20,6 +20,7 @@ class AuthenticationManager {
 
     func signOut() {
         accessToken = nil
+        NotificationCenter.default.post(name: CustomNotification.didSignOut.name, object: nil, userInfo: nil)
     }
 
     func handleAuthCompletionURLScheme(_ url: URL) {

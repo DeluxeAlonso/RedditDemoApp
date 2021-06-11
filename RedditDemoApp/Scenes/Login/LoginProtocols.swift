@@ -32,6 +32,6 @@ protocol LoginCoordinatorProtocol: Coordinator {
     func showAuthPermission(for authPermissionURL: URL?,
                             and authPermissionDelegate: AuthPermissionViewControllerDelegate)
 
-    func showMainScreen(from window: UIWindow?)
+    func showMainScreen(from viewController: UIViewController)
 
 }

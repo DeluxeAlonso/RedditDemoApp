@@ -9,8 +9,7 @@ import UIKit
 
 class AppCoordinator {
 
-    /// Defined as an array to support multiple scenes.
-    private var rootCoordinators: [Coordinator] = []
+    private var currentRootCoordinator: Coordinator?
 
     func getInitialViewController() -> UIViewController {
         if AuthenticationManager.shared.isUserLoggedIn() {
@@ -20,17 +19,17 @@ class AppCoordinator {
         }
     }
 
-    private func builLoginViewController() -> UIViewController {
+    func builLoginViewController() -> UIViewController {
         let loginInCoordinator = LoginCoordinator(navigationController: UINavigationController())
         loginInCoordinator.start()
 
-        rootCoordinators.append(loginInCoordinator)
+        currentRootCoordinator = loginInCoordinator
 
         return loginInCoordinator.navigationController
     }
 
-    private func builPostsSplitViewController() -> UIViewController {
-        let splitViewController = PostsSplitViewController.instantiate()
+    func builPostsSplitViewController() -> UIViewController {
+        let splitViewController = PostsSplitViewController(preferredDisplayMode: .oneBesideSecondary)
 
         // We build the master view controller
         let postsCoordinator = PostsCoordinator(navigationController: UINavigationController())
@@ -39,7 +38,7 @@ class AppCoordinator {
         // We build the initial detail view controller
         let emptyDetailViewController = UIViewController()
 
-        rootCoordinators.append(postsCoordinator)
+        currentRootCoordinator = postsCoordinator
 
         splitViewController.viewControllers = [postsCoordinator.navigationController, emptyDetailViewController]
         return splitViewController

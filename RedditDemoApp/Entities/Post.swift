@@ -7,22 +7,16 @@
 
 import Foundation
 
-struct Post: Decodable, Equatable {
+struct Post: Equatable {
 
+    let id: String
     let title: String
+    let kind: String 
     let author: String
-    let thumbnail: String
+    let thumbnail: String?
     let timestamp: Double
     let numberOfComments: Int
 
     var read: Bool = false
-
-    enum CodingKeys: String, CodingKey {
-        case title
-        case author
-        case thumbnail
-        case timestamp = "created"
-        case numberOfComments = "num_comments"
-    }
 
 }
