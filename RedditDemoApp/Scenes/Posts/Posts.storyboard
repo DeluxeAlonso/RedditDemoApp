@@ -31,13 +31,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="aod-mk-VyF">
-                        <barButtonItem key="rightBarButtonItem" title="Dimiss all" id="L5R-Xa-Wur">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Dimiss" id="L5R-Xa-Wur">
                             <connections>
                                 <action selector="dismissBarButtonItemTapped:" destination="M1w-0d-48F" id="tU5-bv-ZXb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dismissBarButtonItem" destination="L5R-Xa-Wur" id="wzK-8E-BJa"/>
                         <outlet property="tableView" destination="XJw-zq-q3Z" id="hOF-z8-n73"/>
                     </connections>
                 </viewController>

@@ -33,7 +33,16 @@ final class PostCellViewModel: PostCellViewModelProtocol {
         if let thumbnail = post.thumbnail {
             self.thumbnailURL = URL(string: thumbnail)
         }
-        relativeDate = "5 hours ago"
+        let date = Date(timeIntervalSince1970: post.timestamp)
+        relativeDate = date.timeAgoDisplay()
     }
 
+}
+
+extension Date {
+    func timeAgoDisplay() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class PostsViewController: UIViewController, Storyboarded {
 
+    @IBOutlet weak var dismissBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var tableView: UITableView!
     
     static var storyboardName: String = "Posts"
@@ -75,6 +76,7 @@ class PostsViewController: UIViewController, Storyboarded {
     }
 
     private func configureView(with state: PostsViewState) {
+        dismissBarButtonItem.isEnabled = state.hasAvailableEntities
         switch state {
         case .empty:
             tableView.tableFooterView = CustomFooterView(message: "Empty")

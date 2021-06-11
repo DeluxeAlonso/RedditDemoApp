@@ -41,6 +41,15 @@ enum PostsViewState: Equatable {
         }
     }
 
+    var hasAvailableEntities: Bool {
+        switch self {
+        case .initial, .empty, .error:
+            return false
+        case .paging, .populated:
+            return true
+        }
+    }
+
     var needsPrefetch: Bool {
         switch self {
         case .initial, .populated, .empty, .error:
