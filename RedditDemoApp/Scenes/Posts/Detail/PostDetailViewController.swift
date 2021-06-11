@@ -16,10 +16,6 @@ class PostDetailViewController: UIViewController, Storyboarded {
     var viewModel: PostDetailViewModelProtocol?
     weak var coordinator: PostDetailCoordinatorProtocol?
 
-    deinit {
-        print("PostDetailViewController")
-    }
-
     // MARK: - Initializers
 
     override func viewDidLoad() {

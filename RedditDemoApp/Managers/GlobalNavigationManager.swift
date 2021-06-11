@@ -9,8 +9,6 @@ import UIKit
 
 class GlobalNavigationManager {
 
-    static let shared = GlobalNavigationManager()
-
     func showLoginScreen(from viewController: UIViewController) {
         guard let window = viewController.view.window else { return }
         guard let sceneDelegate = window.windowScene?.delegate as? SceneDelegate,
