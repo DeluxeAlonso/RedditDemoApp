@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  RedditDemoApp
+
+  Created by Alonso on 11/06/21.
+  
+*/
+
+"welcome" = "Bienvenido";
+"login" = "Iniciar sesión";
+
+"topPostsTItle" = "Publicaciones top";
+
+"savePictureSuccess" = "La foto fue descargada";
+
+"dismiss" = "Ocultar";
+
+"emptyPostsTitle" = "No hay posts que mostrar";

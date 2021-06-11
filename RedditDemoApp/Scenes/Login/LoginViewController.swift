@@ -16,15 +16,11 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
     var viewModel: LoginViewModelProtocol?
     weak var coordinator: LoginCoordinatorProtocol?
 
-    deinit {
-        print("LoginViewController")
-    }
-
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Welcome!"
+        title = LocalizedStrings.welcome()
         setupUI()
         setupBindings()
     }
@@ -43,7 +39,7 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
     // MARK: - Private
 
     private func setupUI() {
-        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitle(LocalizedStrings.login(), for: .normal)
         loginButton.backgroundColor = ColorPalette.lightBlueColor
         loginButton.setTitleColor(ColorPalette.whiteColor, for: .normal)
         loginButton.setTitleColor(ColorPalette.whiteColor.withAlphaComponent(0.5), for: .highlighted)

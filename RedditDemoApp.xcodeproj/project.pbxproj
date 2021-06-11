@@ -48,6 +48,8 @@
 		E266BD2E2673A1DA00C139BB /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD2D2673A1DA00C139BB /* PersistenceStore.swift */; };
 		E266BD302673A4A400C139BB /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD2F2673A4A400C139BB /* ColorPalette.swift */; };
 		E266BD332673ADDF00C139BB /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD322673ADDF00C139BB /* Date+Formatting.swift */; };
+		E266BD362673BEBF00C139BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E266BD382673BEBF00C139BB /* Localizable.strings */; };
+		E266BD3B2673BEED00C139BB /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD3A2673BEED00C139BB /* LocalizedStrings.swift */; };
 		E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD262671D9B400D95FA8 /* AppDelegate.swift */; };
 		E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD282671D9B400D95FA8 /* SceneDelegate.swift */; };
 		E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */; };
@@ -154,6 +156,9 @@
 		E266BD2D2673A1DA00C139BB /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
 		E266BD2F2673A4A400C139BB /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		E266BD322673ADDF00C139BB /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		E266BD372673BEBF00C139BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E266BD392673BEDA00C139BB /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E266BD3A2673BEED00C139BB /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		E268CD232671D9B400D95FA8 /* RedditDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E268CD262671D9B400D95FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E268CD282671D9B400D95FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -331,6 +336,7 @@
 				E268CD372671D9B800D95FA8 /* Info.plist */,
 				E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */,
 				E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */,
+				E266BD382673BEBF00C139BB /* Localizable.strings */,
 			);
 			path = RedditDemoApp;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 				E266BCFB2673309100C139BB /* TableViewDataSourcePrefetching.swift */,
 				E266BD05267334AD00C139BB /* FontHelper.swift */,
 				E266BD2F2673A4A400C139BB /* ColorPalette.swift */,
+				E266BD3A2673BEED00C139BB /* LocalizedStrings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -622,6 +629,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = E268CD1A2671D9B400D95FA8;
 			productRefGroup = E268CD242671D9B400D95FA8 /* Products */;
@@ -647,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E268CD9F2671E9D200D95FA8 /* Posts.storyboard in Resources */,
+				E266BD362673BEBF00C139BB /* Localizable.strings in Resources */,
 				E268CD362671D9B800D95FA8 /* LaunchScreen.storyboard in Resources */,
 				E266BCF42673288800C139BB /* PostCell.xib in Resources */,
 				E268CD332671D9B800D95FA8 /* Assets.xcassets in Resources */,
@@ -725,6 +734,7 @@
 				E268CD7D2671DE6A00D95FA8 /* AccessTokenResponse.swift in Sources */,
 				E268CD452671DB1A00D95FA8 /* LoginViewModel.swift in Sources */,
 				E268CD872671E43700D95FA8 /* String+Base64.swift in Sources */,
+				E266BD3B2673BEED00C139BB /* LocalizedStrings.swift in Sources */,
 				E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */,
 				E268CD982671E55B00D95FA8 /* Notification+RawRepresentable.swift in Sources */,
 				E266BCD32672761900C139BB /* PostsProtocols.swift in Sources */,
@@ -768,6 +778,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E266BD382673BEBF00C139BB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E266BD372673BEBF00C139BB /* en */,
+				E266BD392673BEDA00C139BB /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E268CD342671D9B800D95FA8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -823,6 +842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -884,6 +904,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

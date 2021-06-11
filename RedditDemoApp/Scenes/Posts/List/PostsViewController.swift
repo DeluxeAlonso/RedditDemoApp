@@ -19,10 +19,6 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
     var viewModel: PostsViewModelProtocol?
     weak var coordinator: PostsCoordinatorProtocol?
 
-    deinit {
-        print("PostsViewController;dkfdl;")
-    }
-
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -45,7 +41,8 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
     // MARK: - Private
 
     private func setupUI() {
-        title = "Top posts"
+        title = LocalizedStrings.topPostsTItle()
+        dismissBarButtonItem.title = LocalizedStrings.dismiss()
         setupTableView()
     }
 
@@ -83,7 +80,7 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
         dismissBarButtonItem.isEnabled = state.hasAvailableEntities
         switch state {
         case .empty:
-            tableView.tableFooterView = CustomFooterView(message: "Empty")
+            tableView.tableFooterView = CustomFooterView(message: LocalizedStrings.emptyPostsTitle())
         case .populated:
             tableView.tableFooterView = UIView()
         case .initial, .paging:
@@ -134,7 +131,7 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
         if let error = error {
             showAlert(message: error.localizedDescription)
         } else {
-            showAlert(message: "Thumbnail image was downloaded")
+            showAlert(message: LocalizedStrings.savePictureSuccess())
         }
     }
 

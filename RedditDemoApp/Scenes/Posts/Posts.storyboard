@@ -54,7 +54,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-DU-ktp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-DU-ktp">
                                 <rect key="frame" x="186.5" y="438" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -66,7 +66,9 @@
                         <constraints>
                             <constraint firstItem="cd3-DU-ktp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o1h-pV-tOm" secondAttribute="leading" constant="48" id="NPg-9k-Cvr"/>
                             <constraint firstItem="cd3-DU-ktp" firstAttribute="centerY" secondItem="QQT-oc-IK9" secondAttribute="centerY" id="X9c-YP-iNW"/>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o1h-pV-tOm" secondAttribute="top" constant="48" id="b6V-pa-3cY"/>
                             <constraint firstItem="cd3-DU-ktp" firstAttribute="centerX" secondItem="QQT-oc-IK9" secondAttribute="centerX" id="q0G-64-d3C"/>
+                            <constraint firstItem="o1h-pV-tOm" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cd3-DU-ktp" secondAttribute="bottom" constant="48" id="uzl-Rr-pH3"/>
                             <constraint firstItem="o1h-pV-tOm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cd3-DU-ktp" secondAttribute="trailing" constant="48" id="xYt-Or-6Xj"/>
                         </constraints>
                     </view>
