@@ -42,9 +42,15 @@ class PostCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
     }
 
     // MARK: - Private
+
+    private func setupUI() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(thumbnailTapGestureAction))
+        thumbnailImageView.addGestureRecognizer(gesture)
+    }
 
     private func setupBindings() {
         guard let viewModel = viewModel else { return }
@@ -61,6 +67,13 @@ class PostCell: UITableViewCell {
         }
     }
 
+    // MARK: - Selectors
+
+    @objc private func thumbnailTapGestureAction() {
+        guard let url = viewModel?.pictureURL else { return }
+        delegate?.postCell(self, didTapThumbnail: url)
+    }
+
     // MARK: - Actions
 
     @IBAction private func dismissButtonTapped(_ sender: Any) {
@@ -70,11 +83,6 @@ class PostCell: UITableViewCell {
     @IBAction private func downloadThumbnailButtonTapped(_ sender: UIButton) {
         guard let image = thumbnailImageView.image else { return }
         delegate?.postCell(self, didTapDownloadButton: image)
-    }
-
-    @IBAction private func thumbnailImageViewTapped(_ sender: UIButton) {
-        guard let url = viewModel?.pictureURL else { return }
-        delegate?.postCell(self, didTapThumbnail: url)
     }
 
 }

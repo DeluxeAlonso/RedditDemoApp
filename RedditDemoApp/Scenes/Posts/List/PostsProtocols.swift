@@ -39,5 +39,6 @@ protocol PostsInteractorProtocol {
 protocol PostsCoordinatorProtocol: Coordinator {
 
     func showPostDetail(_ post: Post)
+    func showPictureDetail(for pictureURL: URL?)
 
 }

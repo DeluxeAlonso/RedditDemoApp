@@ -164,7 +164,7 @@ extension PostsViewController: PostCellDelegate {
     }
 
     func postCell(_ postCell: PostCell, didTapThumbnail url: URL) {
-
+        coordinator?.showPictureDetail(for: url)
     }
 
     func postCell(_ postCell: PostCell, didTapDismissButton tapped: Bool) {

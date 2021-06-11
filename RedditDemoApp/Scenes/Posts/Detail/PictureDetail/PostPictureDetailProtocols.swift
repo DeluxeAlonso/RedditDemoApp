@@ -10,7 +10,7 @@ import WebKit
 
 protocol PostPictureDetailViewModelProtocol {
 
-    var picureURLRequest: URLRequest? { get }
+    var pictureURLRequest: URLRequest? { get }
 
 }
 

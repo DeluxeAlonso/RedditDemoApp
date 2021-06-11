@@ -20,6 +20,8 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Welcome!"
+        setupUI()
         setupBindings()
     }
 
@@ -32,6 +34,13 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
     }
 
     // MARK: - Private
+
+    private func setupUI() {
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.backgroundColor = ColorPalette.lightBlueColor
+        loginButton.setTitleColor(ColorPalette.whiteColor, for: .normal)
+        loginButton.setTitleColor(ColorPalette.whiteColor.withAlphaComponent(0.5), for: .highlighted)
+    }
 
     private func setupBindings() {
         guard let viewModel = viewModel else { return }

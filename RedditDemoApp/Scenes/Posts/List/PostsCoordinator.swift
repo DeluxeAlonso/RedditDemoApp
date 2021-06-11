@@ -38,6 +38,18 @@ final class PostsCoordinator: NSObject, PostsCoordinatorProtocol {
         coordinator.start()
     }
 
+    func showPictureDetail(for pictureURL: URL?) {
+        let navigationController = UINavigationController()
+        let coordinator = PostPictureDetailCoordinator(navigationController: navigationController)
+
+        coordinator.pictureURL = pictureURL
+        coordinator.presentingViewController = self.navigationController.topViewController
+        coordinator.parentCoordinator = unwrappedParentCoordinator
+
+        unwrappedParentCoordinator.childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+
 }
 
 // MARK: - UINavigationControllerDelegate
