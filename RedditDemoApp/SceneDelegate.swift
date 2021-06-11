@@ -10,29 +10,29 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var mainCoordinator: Coordinator!
+    var appCoordinator: AppCoordinator!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
 
-        mainCoordinator = AppCoordinator(navigationController: UINavigationController())
-        mainCoordinator.start()
+        appCoordinator = AppCoordinator()
 
-        window?.rootViewController = mainCoordinator.navigationController
+        window?.rootViewController = appCoordinator.getInitialViewController()
         window?.makeKeyAndVisible()
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url,
-              let queryComponents = url.queryParameters,
-              let code = queryComponents["code"] else {
+              let host = url.host,
+              let urlSchemeHost = URLSchemeHost(rawValue: host) else {
             return
         }
-        // TODO - Move this logic to authentication manager
-        NotificationCenter.default.post(name: CustomNotification.authCodeReceived.name,
-                                        object: nil, userInfo: ["code": code])
+        switch urlSchemeHost {
+        case .authCompletion:
+            AuthenticationManager.shared.handleAuthCompletionURLScheme(url)
+        }
     }
 
 }

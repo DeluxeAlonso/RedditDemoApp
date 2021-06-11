@@ -14,6 +14,24 @@ class AuthenticationManager {
     @KeychainStorage(key: Constants.accessTokenKey)
     var accessToken: String?
 
+    func isUserLoggedIn() -> Bool {
+        return accessToken != nil
+    }
+
+    func signOut() {
+        accessToken = nil
+        NotificationCenter.default.post(name: CustomNotification.didSignOut.name, object: nil, userInfo: nil)
+    }
+
+    func handleAuthCompletionURLScheme(_ url: URL) {
+        guard let queryComponents = url.queryParameters,
+              let code = queryComponents["code"] else {
+            return
+        }
+        NotificationCenter.default.post(name: CustomNotification.authCodeReceived.name,
+                                        object: nil, userInfo: ["code": code])
+    }
+
 }
 
 extension AuthenticationManager {

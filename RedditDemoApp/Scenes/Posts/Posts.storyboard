@@ -8,75 +8,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Oe9-Hl-kIM">
+        <!--Title-->
+        <scene sceneID="swX-s6-667">
             <objects>
-                <viewController id="fE5-9g-7Oz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bJJ-8U-l3e">
+                <viewController storyboardIdentifier="PostsViewController" id="M1w-0d-48F" customClass="PostsViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eI-ab-Raz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Xtx-iM-dyu"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XJw-zq-q3Z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cZa-W6-asP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XJw-zq-q3Z" firstAttribute="top" secondItem="cZa-W6-asP" secondAttribute="top" id="7eF-Bx-8Vj"/>
+                            <constraint firstItem="cZa-W6-asP" firstAttribute="trailing" secondItem="XJw-zq-q3Z" secondAttribute="trailing" id="Ei7-TB-lNp"/>
+                            <constraint firstItem="cZa-W6-asP" firstAttribute="bottom" secondItem="XJw-zq-q3Z" secondAttribute="bottom" id="Utg-aK-vLX"/>
+                            <constraint firstItem="XJw-zq-q3Z" firstAttribute="leading" secondItem="cZa-W6-asP" secondAttribute="leading" id="xhO-Vu-WPz"/>
+                        </constraints>
                     </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKj-Ya-0w4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-291" y="645"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="SLg-Xd-2gl">
-            <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="QzY-KH-Wyy" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KX5-QC-GlB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u5u-bN-rMj">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5u-bN-rMj" id="FR7-MQ-ohV">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="QzY-KH-Wyy" id="Wxb-7L-9tQ"/>
-                            <outlet property="delegate" destination="QzY-KH-Wyy" id="pWp-F5-ocM"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="NTZ-VH-dgQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yIf-qM-3ZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-291" y="1390"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5jy-9n-a8s">
-            <objects>
-                <navigationController id="jsc-RI-2Tv" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tU9-uy-fNc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                    <navigationItem key="navigationItem" title="Title" id="aod-mk-VyF">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Dimiss" id="L5R-Xa-Wur">
+                            <connections>
+                                <action selector="dismissBarButtonItemTapped:" destination="M1w-0d-48F" id="tU5-bv-ZXb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="QzY-KH-Wyy" kind="relationship" relationship="rootViewController" id="fTz-TM-dQO"/>
+                        <outlet property="dismissBarButtonItem" destination="L5R-Xa-Wur" id="wzK-8E-BJa"/>
+                        <outlet property="tableView" destination="XJw-zq-q3Z" id="hOF-z8-n73"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KcY-6p-5kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adR-Sv-LMn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1239" y="1390"/>
+            <point key="canvasLocation" x="-326" y="645"/>
         </scene>
         <!--Posts Split View Controller-->
         <scene sceneID="ORL-yE-0ET">
             <objects>
-                <splitViewController storyboardIdentifier="PostsSplitViewController" allowDoubleColumnStyle="YES" preferredDisplayMode="beside" id="NUL-KP-sHe" customClass="PostsSplitViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="jsc-RI-2Tv" kind="relationship" relationship="masterViewController" id="Omf-pe-U9p"/>
-                        <segue destination="fE5-9g-7Oz" kind="relationship" relationship="detailViewController" id="ZcM-0j-usM"/>
-                    </connections>
-                </splitViewController>
+                <splitViewController storyboardIdentifier="PostsSplitViewController" allowDoubleColumnStyle="YES" preferredDisplayMode="twoBeside" behavior="overlay" presentsWithGesture="NO" id="NUL-KP-sHe" customClass="PostsSplitViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1S-Uk-jVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1238" y="645"/>

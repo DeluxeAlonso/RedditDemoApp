@@ -8,5 +8,6 @@
 enum CustomNotification: String, NotificationNameable {
 
     case authCodeReceived
+    case didSignOut
 
 }

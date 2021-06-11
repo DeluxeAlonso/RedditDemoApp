@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, Storyboarded {
+class LoginViewController: UIViewController, Storyboarded, Alertable {
 
     @IBOutlet private weak var loginButton: ShrinkingButton!
 
@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, Storyboarded {
         super.viewDidAppear(animated)
         viewModel?.loginDidFinish = { [weak self] in
             guard let self = self else { return }
-            self.coordinator?.showMainScreen(from: self.view.window)
+            self.coordinator?.showMainScreen(from: self)
         }
     }
 
@@ -35,15 +35,18 @@ class LoginViewController: UIViewController, Storyboarded {
 
     private func setupBindings() {
         guard let viewModel = viewModel else { return }
-        viewModel.startLoading.bind { startLoading in
+        viewModel.startLoading.bind { [weak self] startLoading in
+            guard let self = self else { return }
             if startLoading {
                 self.loginButton.startAnimation()
             } else {
                 self.loginButton.stopAnimation()
             }
         }
-        viewModel.didReceiveError.bind { error in
-            // TODO
+        viewModel.didReceiveError.bind { [weak self] error in
+            guard let self = self else { return }
+            guard let error = error else { return }
+            self.showAlert(message: error.localizedDescription)
         }
     }
 

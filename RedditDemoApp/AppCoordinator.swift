@@ -7,22 +7,41 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+class AppCoordinator {
 
-    var childCoordinators: [Coordinator] = []
-    var parentCoordinator: Coordinator?
-    var navigationController: UINavigationController
+    private var currentRootCoordinator: Coordinator?
 
-    // MARK: - Initializers
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    func getInitialViewController() -> UIViewController {
+        if AuthenticationManager.shared.isUserLoggedIn() {
+            return builPostsSplitViewController()
+        } else {
+            return builLoginViewController()
+        }
     }
 
-    func start() {
-        let coordinator = LoginCoordinator(navigationController: navigationController)
-        childCoordinators.append(coordinator)
-        coordinator.start()
+    func builLoginViewController() -> UIViewController {
+        let loginInCoordinator = LoginCoordinator(navigationController: UINavigationController())
+        loginInCoordinator.start()
+
+        currentRootCoordinator = loginInCoordinator
+
+        return loginInCoordinator.navigationController
+    }
+
+    func builPostsSplitViewController() -> UIViewController {
+        let splitViewController = PostsSplitViewController(preferredDisplayMode: .oneBesideSecondary)
+
+        // We build the master view controller
+        let postsCoordinator = PostsCoordinator(navigationController: UINavigationController())
+        postsCoordinator.start()
+
+        // We build the initial detail view controller
+        let emptyDetailViewController = UIViewController()
+
+        currentRootCoordinator = postsCoordinator
+
+        splitViewController.viewControllers = [postsCoordinator.navigationController, emptyDetailViewController]
+        return splitViewController
     }
 
 }

@@ -44,17 +44,8 @@ final class LoginCoordinator: LoginCoordinatorProtocol {
         coordinator.start()
     }
 
-    func showMainScreen(from window: UIWindow?) {
-        guard let window = window else { return }
-        UIView.transition(with: window,
-                          duration: 0.5,
-                          options: [UIView.AnimationOptions.curveEaseOut,
-                                    UIView.AnimationOptions.transitionCrossDissolve],
-                          animations: {},
-                          completion: { _ in
-                            let splitViewController = PostsSplitViewController.instantiate()
-                            window.rootViewController = splitViewController
-                          })
+    func showMainScreen(from viewController: UIViewController) {
+        GlobalNavigationManager.shared.showMainScreen(from: viewController)
     }
 
 }
