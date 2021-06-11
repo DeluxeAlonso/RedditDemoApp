@@ -9,6 +9,11 @@ import UIKit
 
 class GlobalNavigationManager {
 
+    /**
+     * Navigates to the login screen from a specific view controller.
+     * - Parameters:
+     *      - viewController: the view controller to start the navigation.
+     */
     func showLoginScreen(from viewController: UIViewController) {
         guard let window = viewController.view.window else { return }
         guard let sceneDelegate = window.windowScene?.delegate as? SceneDelegate,
@@ -26,6 +31,11 @@ class GlobalNavigationManager {
                           })
     }
 
+    /**
+     * Navigates to the main split screen from a specific view controller,
+     * - Parameters:
+     *      - viewController: the view controller to start the navigation.
+     */
     func showMainScreen(from viewController: UIViewController) {
         guard let window = viewController.view.window else { return }
         guard let sceneDelegate = window.windowScene?.delegate as? SceneDelegate,

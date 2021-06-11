@@ -16,12 +16,16 @@ protocol PostsViewModelProtocol {
     var needsPrefetch: Bool { get }
 
     /**
-     Retrieves the top posts. If shouldRefresh is true, the posts are reset.
-     */
+    * Retrieves the top posts. If shouldRefresh is true, the posts are reset.
+    * - Parameters:
+    *      - shouldRefresh: indicates if posts should be reset.
+    */
     func getTopPosts(shouldRefresh: Bool)
 
     /**
-     Marks post at a specific index as read.
+     * Marks post at a specific index as read.
+     * - Parameters:
+     *      - index: the post index.
      */
     func markAsRead(at index: Int)
 
@@ -52,6 +56,12 @@ protocol PostsInteractorProtocol {
 protocol PostsCoordinatorProtocol: Coordinator {
 
     func showPostDetail(_ post: Post)
+
+    /**
+     * Shows the post picture in a new screen.
+     * - Parameters:
+     *      - pictureURL: the picture url to be rendered in the new screen.
+     */
     func showPictureDetail(for pictureURL: URL?)
 
 }
