@@ -9,7 +9,7 @@ import Foundation
 
 enum PostProvider {
 
-    case getTopPosts(accessToken: String)
+    case getTopPosts(accessToken: String, after: String?)
 
 }
 
@@ -28,15 +28,16 @@ extension PostProvider: Endpoint {
 
     var headers: [String : String]? {
         switch self {
-        case .getTopPosts(let accessToken):
+        case .getTopPosts(let accessToken, _):
             return ["Authorization": "Bearer \(accessToken)"]
         }
     }
 
     var params: [String : Any]? {
         switch self {
-        case .getTopPosts:
-            return nil
+        case .getTopPosts(_ , let after):
+            guard let after = after else { return nil }
+            return ["after": after]
         }
     }
 

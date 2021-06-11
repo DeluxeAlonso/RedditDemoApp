@@ -33,7 +33,6 @@ class PostCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     // MARK: - Private
@@ -44,12 +43,16 @@ class PostCell: UITableViewCell {
         descriptionLabel.text = viewModel.title
         dateLabel.text = viewModel.relativeDate
         commentsLabel.text = viewModel.commentCount
+
+        if let thumbnailURL = viewModel.thumbnailURL {
+            thumbnailImageView.setImage(from: thumbnailURL)
+        }
     }
 
     // MARK: - Actions
 
     @IBAction private func dismissButtonTapped(_ sender: Any) {
-        
+        delegate?.postCell(self, didTapDismissButton: true)
     }
 
 }

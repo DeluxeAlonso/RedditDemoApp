@@ -10,22 +10,28 @@ import Foundation
 protocol PostsViewModelProtocol {
 
     var viewState: Bindable<PostsViewState> { get }
+    var didRemovePost: Bindable<Int?> { get }
+
+    var needsPrefetch: Bool { get }
 
     /**
      Retrieves the top posts.
      */
-    func getTopPosts()
+    func getTopPosts(shouldRefresh: Bool)
 
     func markAsRead(at index: Int)
 
     func hidePost(at index:Int)
     func hideAllPosts()
 
+    func numberOfPosts() -> Int
+    func buildPostCellModel(at index: Int) -> PostCellViewModelProtocol
+
 }
 
 protocol PostsInteractorProtocol {
 
-    func getTopPosts(completion: @escaping (Result<[Post], Error>) -> Void)
+    func getTopPosts(after: String?, completion: @escaping (Result<[Post], Error>) -> Void)
 
 }
 

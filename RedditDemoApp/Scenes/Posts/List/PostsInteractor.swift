@@ -15,12 +15,12 @@ final class PostsInteractor: PostsInteractorProtocol {
         self.postClient = postClient
     }
 
-    func getTopPosts(completion: @escaping (Result<[Post], Error>) -> Void) {
+    func getTopPosts(after: String?, completion: @escaping (Result<[Post], Error>) -> Void) {
         guard let accessToken = AuthenticationManager.shared.accessToken else {
             completion(.failure(APIError.requestFailed))
             return
         }
-        postClient.getTopPosts(accessToken: accessToken) { result in
+        postClient.getTopPosts(accessToken: accessToken, after: after) { result in
             switch result {
             case .success(let response):
                 let posts = self.buildPosts(from: response)

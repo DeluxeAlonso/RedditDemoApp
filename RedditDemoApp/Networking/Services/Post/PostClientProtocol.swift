@@ -10,6 +10,7 @@ import Foundation
 protocol PostClientProtocol {
 
     func getTopPosts(accessToken: String,
+                     after: String?,
                      completion: @escaping (Result<ListingResponse<PostResponse>, APIError>) -> Void)
 
 }

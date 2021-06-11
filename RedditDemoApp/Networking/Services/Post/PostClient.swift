@@ -27,8 +27,9 @@ final class PostClient: APIClient, PostClientProtocol {
     // MARK: - PostClientProtocol
 
     func getTopPosts(accessToken: String,
+                     after: String?,
                      completion: @escaping (Result<ListingResponse<PostResponse>, APIError>) -> Void) {
-        let request = PostProvider.getTopPosts(accessToken: accessToken).request
+        let request = PostProvider.getTopPosts(accessToken: accessToken, after: after).request
         fetch(with: request, decode: { json -> ListingResponse<PostResponse>? in
             guard let requestToken = json as? ListingResponse<PostResponse> else { return nil }
             return requestToken

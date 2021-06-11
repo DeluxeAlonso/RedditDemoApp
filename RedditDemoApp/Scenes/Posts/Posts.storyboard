@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Posts View Controller-->
+        <!--Title-->
         <scene sceneID="swX-s6-667">
             <objects>
                 <viewController storyboardIdentifier="PostsViewController" id="M1w-0d-48F" customClass="PostsViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,6 +30,13 @@
                             <constraint firstItem="XJw-zq-q3Z" firstAttribute="leading" secondItem="cZa-W6-asP" secondAttribute="leading" id="xhO-Vu-WPz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="aod-mk-VyF">
+                        <barButtonItem key="rightBarButtonItem" title="Dimiss all" id="L5R-Xa-Wur">
+                            <connections>
+                                <action selector="dismissBarButtonItemTapped:" destination="M1w-0d-48F" id="tU5-bv-ZXb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="XJw-zq-q3Z" id="hOF-z8-n73"/>
                     </connections>

@@ -22,8 +22,9 @@ final class PostCellViewModel: PostCellViewModelProtocol {
     let title: String
     let author: String
     let commentCount: String
-    let thumbnailURL: URL?
-    let dateText: String
+    let relativeDate: String
+
+    private(set) var thumbnailURL: URL?
 
     init(post: Post) {
         self.title = post.title

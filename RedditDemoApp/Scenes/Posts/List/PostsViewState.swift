@@ -11,9 +11,9 @@ enum PostsViewState: Equatable {
 
     case initial
     case empty
-    case paging([Post], lastItemFullname: String)
+    case paging([Post], after: String?)
     case populated([Post])
-    case error(ErrorDescriptable)
+    case error(Error)
 
     static func == (lhs: PostsViewState, rhs: PostsViewState) -> Bool {
         switch (lhs, rhs) {
@@ -32,12 +32,12 @@ enum PostsViewState: Equatable {
         }
     }
 
-    var currentLastItemFullName: String? {
+    var currentAfter: String? {
         switch self {
         case .initial, .populated, .empty, .error:
             return nil
-        case .paging(_, let lastItemFullname):
-            return lastItemFullname
+        case .paging(_, let after):
+            return after
         }
     }
 
