@@ -13,6 +13,7 @@ protocol PostCellViewModelProtocol {
     var author: String { get }
     var commentCount: String { get }
     var thumbnailURL: URL? { get }
+    var pictureURL: URL? { get }
     var relativeDate: String { get }
 
 }
@@ -25,6 +26,7 @@ final class PostCellViewModel: PostCellViewModelProtocol {
     let relativeDate: String
 
     private(set) var thumbnailURL: URL?
+    private(set) var pictureURL: URL?
 
     init(post: Post) {
         self.title = post.title
@@ -32,6 +34,9 @@ final class PostCellViewModel: PostCellViewModelProtocol {
         self.commentCount = "\(post.numberOfComments) comments"
         if let thumbnail = post.thumbnail {
             self.thumbnailURL = URL(string: thumbnail)
+        }
+        if let picture = post.picture {
+            self.pictureURL = URL(string: picture)
         }
         let date = Date(timeIntervalSince1970: post.timestamp)
         relativeDate = date.timeAgoDisplay()

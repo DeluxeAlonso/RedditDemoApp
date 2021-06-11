@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostsViewController: UIViewController, Storyboarded {
+class PostsViewController: UIViewController, Storyboarded, Alertable {
 
     @IBOutlet weak var dismissBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var tableView: UITableView!
@@ -119,6 +119,16 @@ class PostsViewController: UIViewController, Storyboarded {
         viewModel?.getTopPosts(shouldRefresh: true)
     }
 
+    @objc private func imageDownloadError(_ image: UIImage,
+                                          didFinishSavingWithError error: Error?,
+                                          contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            showAlert(message: error.localizedDescription)
+        } else {
+            showAlert(message: "Thumbnail image was downloaded")
+        }
+    }
+
 }
 
 extension PostsViewController: UITableViewDataSource {
@@ -147,6 +157,14 @@ extension PostsViewController: UITableViewDelegate {
 }
 
 extension PostsViewController: PostCellDelegate {
+
+    func postCell(_ postCell: PostCell, didTapDownloadButton image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imageDownloadError), nil)
+    }
+
+    func postCell(_ postCell: PostCell, didTapThumbnail url: URL) {
+
+    }
 
     func postCell(_ postCell: PostCell, didTapDismissButton tapped: Bool) {
         guard let indexPath = tableView.indexPath(for: postCell) else {

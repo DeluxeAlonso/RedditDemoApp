@@ -35,6 +35,7 @@
 		E266BD06267334AD00C139BB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD05267334AD00C139BB /* FontHelper.swift */; };
 		E266BD082673352200C139BB /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD072673352200C139BB /* UIView+Layout.swift */; };
 		E266BD0A2673374F00C139BB /* UIImageView+Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD092673374F00C139BB /* UIImageView+Caching.swift */; };
+		E266BD0C267349D100C139BB /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD0B267349D000C139BB /* Alertable.swift */; };
 		E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD262671D9B400D95FA8 /* AppDelegate.swift */; };
 		E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD282671D9B400D95FA8 /* SceneDelegate.swift */; };
 		E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */; };
@@ -116,6 +117,7 @@
 		E266BD05267334AD00C139BB /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		E266BD072673352200C139BB /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		E266BD092673374F00C139BB /* UIImageView+Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Caching.swift"; sourceTree = "<group>"; };
+		E266BD0B267349D000C139BB /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		E268CD232671D9B400D95FA8 /* RedditDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E268CD262671D9B400D95FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E268CD282671D9B400D95FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				E268CD812671E0CD00D95FA8 /* Storyboarded.swift */,
 				E266BCFD267330BF00C139BB /* Dequeuable.swift */,
 				E266BCFF2673310000C139BB /* DataSourcePrefetching.swift */,
+				E266BD0B267349D000C139BB /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */,
 				E266BCDC2672C92E00C139BB /* Post.swift in Sources */,
 				E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */,
+				E266BD0C267349D100C139BB /* Alertable.swift in Sources */,
 				E266BCCD267275F900C139BB /* PostsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

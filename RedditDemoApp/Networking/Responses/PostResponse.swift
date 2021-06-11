@@ -11,6 +11,7 @@ struct PostResponse: Decodable {
     let title: String
     let author: String
     let thumbnail: String?
+    let url: String?
     let timestamp: Double
     let numberOfComments: Int
 
@@ -19,6 +20,7 @@ struct PostResponse: Decodable {
         case title
         case author
         case thumbnail
+        case url
         case timestamp = "created"
         case numberOfComments = "num_comments"
     }

@@ -18,6 +18,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G0Q-IG-8MQ">
                         <rect key="frame" x="334" y="68" width="64" height="64"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" constant="64" id="LiB-8f-Msf"/>
                             <constraint firstAttribute="height" constant="64" id="wjh-Te-QDe"/>
@@ -37,21 +38,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXE-Hg-mIP" userLabel="Author Label">
-                                <rect key="frame" x="16" y="0.0" width="328" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="274" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXU-wL-hqh">
+                                <rect key="frame" x="306" y="0.0" width="54" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="M41-gx-Jq2"/>
+                                </constraints>
+                                <state key="normal" image="square.and.arrow.down" catalog="system"/>
+                                <connections>
+                                    <action selector="downloadThumbnailButtonTapped:" destination="lks-4n-Y1R" eventType="touchUpInside" id="1KP-1c-PPr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fXU-wL-hqh" firstAttribute="top" secondItem="6oF-Gw-1Ew" secondAttribute="top" id="0mc-Gc-F0a"/>
                             <constraint firstAttribute="trailing" secondItem="nSI-3f-zSp" secondAttribute="trailing" id="4zN-Dk-H0G"/>
                             <constraint firstAttribute="height" constant="44" id="Jzg-q3-dTZ"/>
+                            <constraint firstItem="fXU-wL-hqh" firstAttribute="leading" secondItem="EXE-Hg-mIP" secondAttribute="trailing" constant="16" id="NRH-Dn-gxO"/>
                             <constraint firstItem="nSI-3f-zSp" firstAttribute="top" secondItem="6oF-Gw-1Ew" secondAttribute="top" id="dJu-zj-kSe"/>
-                            <constraint firstItem="nSI-3f-zSp" firstAttribute="leading" secondItem="EXE-Hg-mIP" secondAttribute="trailing" constant="16" id="dLj-e5-opu"/>
                             <constraint firstItem="EXE-Hg-mIP" firstAttribute="top" secondItem="6oF-Gw-1Ew" secondAttribute="top" id="kT4-AV-RlB"/>
                             <constraint firstAttribute="bottom" secondItem="EXE-Hg-mIP" secondAttribute="bottom" id="mKi-ad-ReX"/>
+                            <constraint firstAttribute="bottom" secondItem="fXU-wL-hqh" secondAttribute="bottom" id="mcj-bh-JtF"/>
                             <constraint firstItem="EXE-Hg-mIP" firstAttribute="leading" secondItem="6oF-Gw-1Ew" secondAttribute="leading" constant="16" id="oOy-kj-skm"/>
+                            <constraint firstItem="nSI-3f-zSp" firstAttribute="leading" secondItem="fXU-wL-hqh" secondAttribute="trailing" id="prT-hz-8Y8"/>
                             <constraint firstAttribute="bottom" secondItem="nSI-3f-zSp" secondAttribute="bottom" id="yXN-CM-6m7"/>
                         </constraints>
                     </view>
@@ -119,6 +133,7 @@
     </objects>
     <resources>
         <image name="delete.right.fill" catalog="system" width="128" height="104"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

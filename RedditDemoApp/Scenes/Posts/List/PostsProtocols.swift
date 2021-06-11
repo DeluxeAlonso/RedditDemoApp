@@ -15,7 +15,7 @@ protocol PostsViewModelProtocol {
     var needsPrefetch: Bool { get }
 
     /**
-     Retrieves the top posts.
+     Retrieves the top posts. If shouldRefresh is true, the posts are reset.
      */
     func getTopPosts(shouldRefresh: Bool)
 

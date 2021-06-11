@@ -48,7 +48,8 @@ final class PostsInteractor: PostsInteractorProtocol {
                             author: postResponse.author,
                             thumbnail: postResponse.thumbnail,
                             timestamp: postResponse.timestamp,
-                            numberOfComments: postResponse.numberOfComments)
+                            numberOfComments: postResponse.numberOfComments,
+                            picture: postResponse.url)
             return post
         }
         return posts

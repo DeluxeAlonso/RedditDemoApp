@@ -16,6 +16,7 @@ struct Post: Equatable {
     let thumbnail: String?
     let timestamp: Double
     let numberOfComments: Int
+    let picture: String?
 
     var read: Bool = false
 
