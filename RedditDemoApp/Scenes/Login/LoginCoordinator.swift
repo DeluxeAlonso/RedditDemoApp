@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginCoordinator: LoginCoordinatorProtocol {
+final class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
 
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?

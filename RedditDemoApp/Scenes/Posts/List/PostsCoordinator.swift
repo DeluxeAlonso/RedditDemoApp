@@ -18,7 +18,9 @@ final class PostsCoordinator: NSObject, PostsCoordinatorProtocol {
     }
 
     func start() {
-        let interactor = PostsInteractor(postClient: PostClient())
+        let client = PostClient()
+        let store: PersistenceStore<VisitedPost> = PersistenceStore(CoreDataStack.shared.mainContext)
+        let interactor = PostsInteractor(postClient: client, visitedPostStore: store)
         let viewModel = PostsViewModel(interactor: interactor)
 
         let viewController = PostsViewController.instantiate()
@@ -30,7 +32,25 @@ final class PostsCoordinator: NSObject, PostsCoordinatorProtocol {
     }
 
     func showPostDetail(_ post: Post) {
+        let coordinator = PostDetailCoordinator(navigationController: navigationController)
+        coordinator.post = post
 
+        coordinator.parentCoordinator = unwrappedParentCoordinator
+
+        unwrappedParentCoordinator.childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+
+    func showPictureDetail(for pictureURL: URL?) {
+        let navigationController = UINavigationController()
+        let coordinator = PostPictureDetailCoordinator(navigationController: navigationController)
+
+        coordinator.pictureURL = pictureURL
+        coordinator.presentingViewController = self.navigationController.topViewController
+        coordinator.parentCoordinator = unwrappedParentCoordinator
+
+        unwrappedParentCoordinator.childCoordinators.append(coordinator)
+        coordinator.start()
     }
 
 }

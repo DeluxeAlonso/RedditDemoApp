@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,19 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsE-dy-lsD" customClass="ShrinkingButton" customModule="RedditDemoApp" customModuleProvider="target">
-                                <rect key="frame" x="188" y="433" width="38" height="30"/>
+                                <rect key="frame" x="131" y="400" width="128" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5Z8-8c-ljD"/>
+                                    <constraint firstAttribute="width" constant="128" id="MP4-co-IBp"/>
+                                    <constraint firstAttribute="height" constant="64" id="NhS-Ea-fAO"/>
+                                    <constraint firstAttribute="width" constant="200" id="eXP-CJ-7Gq">
+                                        <variation key="widthClass=regular" constant="256"/>
+                                    </constraint>
+                                </constraints>
                                 <state key="normal" title="Login"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
@@ -30,6 +38,20 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NhS-Ea-fAO"/>
+                                        <exclude reference="eXP-CJ-7Gq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="5Z8-8c-ljD"/>
+                                        <exclude reference="MP4-co-IBp"/>
+                                        <include reference="NhS-Ea-fAO"/>
+                                        <include reference="eXP-CJ-7Gq"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hC8-T4-xqN"/>
                                 </connections>
@@ -55,11 +77,11 @@
             <objects>
                 <viewController storyboardIdentifier="AuthPermissionViewController" id="BeU-FE-nm9" customClass="AuthPermissionViewController" customModule="RedditDemoApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WwD-8k-vtd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-fB-mKK">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -67,7 +89,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="red-kh-lSi">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
                                 <items>
                                     <barButtonItem image="arrowshape.turn.up.left" catalog="system" id="bzb-6V-a3t" userLabel="Back Bar Button Item">
                                         <connections>
@@ -89,7 +111,7 @@
                                 </items>
                             </toolbar>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-Fu-2QJ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="4"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="4"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Li-EQ-gUr"/>
@@ -121,6 +143,11 @@
             <point key="canvasLocation" x="1006" y="94"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="NsE-dy-lsD">
+            <size key="intrinsicContentSize" width="38" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>

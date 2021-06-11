@@ -10,6 +10,7 @@ import Foundation
 protocol PostsViewModelProtocol {
 
     var viewState: Bindable<PostsViewState> { get }
+    var didUpdatePost: Bindable<Int?> { get }
     var didRemovePost: Bindable<Int?> { get }
 
     var needsPrefetch: Bool { get }
@@ -25,6 +26,7 @@ protocol PostsViewModelProtocol {
     func hideAllPosts()
 
     func numberOfPosts() -> Int
+    func post(at index: Int) -> Post
     func buildPostCellModel(at index: Int) -> PostCellViewModelProtocol
 
 }
@@ -33,10 +35,13 @@ protocol PostsInteractorProtocol {
 
     func getTopPosts(after: String?, completion: @escaping (Result<[Post], Error>) -> Void)
 
+    func markPostAsRead(id: String, completion: @escaping (Result<Void, Error>) -> Void)
+
 }
 
 protocol PostsCoordinatorProtocol: Coordinator {
 
     func showPostDetail(_ post: Post)
+    func showPictureDetail(for pictureURL: URL?)
 
 }

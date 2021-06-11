@@ -27,7 +27,7 @@ protocol LoginInteractorProtocol {
 
 }
 
-protocol LoginCoordinatorProtocol: Coordinator {
+protocol LoginCoordinatorProtocol: AnyObject {
 
     func showAuthPermission(for authPermissionURL: URL?,
                             and authPermissionDelegate: AuthPermissionViewControllerDelegate)

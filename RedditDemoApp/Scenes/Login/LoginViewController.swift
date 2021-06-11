@@ -16,15 +16,24 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
     var viewModel: LoginViewModelProtocol?
     weak var coordinator: LoginCoordinatorProtocol?
 
+    deinit {
+        print("LoginViewController")
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Welcome!"
+        setupUI()
         setupBindings()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // We are handling the binding on this method because
+        // we can get the window and scene of this view controller
+        // only after it has been added to the window hierarchy.
         viewModel?.loginDidFinish = { [weak self] in
             guard let self = self else { return }
             self.coordinator?.showMainScreen(from: self)
@@ -32,6 +41,13 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
     }
 
     // MARK: - Private
+
+    private func setupUI() {
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.backgroundColor = ColorPalette.lightBlueColor
+        loginButton.setTitleColor(ColorPalette.whiteColor, for: .normal)
+        loginButton.setTitleColor(ColorPalette.whiteColor.withAlphaComponent(0.5), for: .highlighted)
+    }
 
     private func setupBindings() {
         guard let viewModel = viewModel else { return }

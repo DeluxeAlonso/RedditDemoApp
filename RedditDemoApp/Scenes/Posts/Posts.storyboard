@@ -31,7 +31,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="aod-mk-VyF">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Dimiss" id="L5R-Xa-Wur">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Dismiss" id="L5R-Xa-Wur">
                             <connections>
                                 <action selector="dismissBarButtonItemTapped:" destination="M1w-0d-48F" id="tU5-bv-ZXb"/>
                             </connections>
@@ -46,16 +46,112 @@
             </objects>
             <point key="canvasLocation" x="-326" y="645"/>
         </scene>
-        <!--Posts Split View Controller-->
-        <scene sceneID="ORL-yE-0ET">
+        <!--Post Detail View Controller-->
+        <scene sceneID="bFo-g0-1r5">
             <objects>
-                <splitViewController storyboardIdentifier="PostsSplitViewController" allowDoubleColumnStyle="YES" preferredDisplayMode="twoBeside" behavior="overlay" presentsWithGesture="NO" id="NUL-KP-sHe" customClass="PostsSplitViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m1S-Uk-jVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PostDetailViewController" id="EfL-je-MFn" customClass="PostDetailViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QQT-oc-IK9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-DU-ktp">
+                                <rect key="frame" x="186.5" y="438" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o1h-pV-tOm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o1h-pV-tOm" secondAttribute="leading" constant="48" id="NPg-9k-Cvr"/>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="centerY" secondItem="QQT-oc-IK9" secondAttribute="centerY" id="X9c-YP-iNW"/>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="centerX" secondItem="QQT-oc-IK9" secondAttribute="centerX" id="q0G-64-d3C"/>
+                            <constraint firstItem="o1h-pV-tOm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cd3-DU-ktp" secondAttribute="trailing" constant="48" id="xYt-Or-6Xj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="cd3-DU-ktp" id="wJY-Sh-TsM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JDN-B9-7mi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1238" y="645"/>
+            <point key="canvasLocation" x="696" y="650"/>
+        </scene>
+        <!--Post Picture Detail View Controller-->
+        <scene sceneID="nU0-hU-Jyn">
+            <objects>
+                <viewController storyboardIdentifier="PostPictureDetailViewController" id="grZ-5R-m2P" customClass="PostPictureDetailViewController" customModule="RedditDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpo-oT-rnc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1S-uc-4fD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0OG-Br-8Fd">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem enabled="NO" image="arrowshape.turn.up.left" catalog="system" id="9ql-3P-hSx" userLabel="Back Bar Button Item">
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="grZ-5R-m2P" id="bDI-Ed-gBM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" systemItem="fixedSpace" id="feB-vV-Oze"/>
+                                    <barButtonItem enabled="NO" image="arrowshape.turn.up.right" catalog="system" id="b5e-bY-wvb" userLabel="Forward Bar Button Item">
+                                        <connections>
+                                            <action selector="forwardButtonAction:" destination="grZ-5R-m2P" id="eCd-OG-xhv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="29l-07-fSa"/>
+                                    <barButtonItem systemItem="refresh" id="c9M-sT-PFa">
+                                        <connections>
+                                            <action selector="reloadButtonAction:" destination="grZ-5R-m2P" id="e8W-WS-Ufp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-lN-LsQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lkz-kB-57C"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0OG-Br-8Fd" firstAttribute="bottom" secondItem="lkz-kB-57C" secondAttribute="bottom" id="0s5-yD-bWV"/>
+                            <constraint firstItem="0OG-Br-8Fd" firstAttribute="top" secondItem="h1S-uc-4fD" secondAttribute="bottom" id="3gY-zv-bms"/>
+                            <constraint firstItem="0OG-Br-8Fd" firstAttribute="leading" secondItem="fpo-oT-rnc" secondAttribute="leading" id="5hZ-vr-ajN"/>
+                            <constraint firstItem="PKg-lN-LsQ" firstAttribute="top" secondItem="lkz-kB-57C" secondAttribute="top" id="GV0-1v-OzX"/>
+                            <constraint firstItem="0OG-Br-8Fd" firstAttribute="trailing" secondItem="fpo-oT-rnc" secondAttribute="trailing" id="VHR-xc-seE"/>
+                            <constraint firstItem="h1S-uc-4fD" firstAttribute="leading" secondItem="fpo-oT-rnc" secondAttribute="leading" id="WHf-EN-9nw"/>
+                            <constraint firstItem="h1S-uc-4fD" firstAttribute="top" secondItem="lkz-kB-57C" secondAttribute="top" id="YgJ-26-zwT"/>
+                            <constraint firstItem="PKg-lN-LsQ" firstAttribute="leading" secondItem="fpo-oT-rnc" secondAttribute="leading" id="eqU-1J-i6p"/>
+                            <constraint firstAttribute="trailing" secondItem="h1S-uc-4fD" secondAttribute="trailing" id="fx7-qG-IuI"/>
+                            <constraint firstAttribute="trailing" secondItem="PKg-lN-LsQ" secondAttribute="trailing" id="skC-9i-VYs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Im-Fm-xmu"/>
+                    <connections>
+                        <outlet property="backButton" destination="9ql-3P-hSx" id="Syb-TD-aLB"/>
+                        <outlet property="forwardButton" destination="b5e-bY-wvb" id="h45-70-BYN"/>
+                        <outlet property="progressView" destination="PKg-lN-LsQ" id="Msm-J7-KdE"/>
+                        <outlet property="reloadButton" destination="c9M-sT-PFa" id="7be-dt-spy"/>
+                        <outlet property="webView" destination="h1S-uc-4fD" id="TkS-2B-Wi9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rhU-Kr-lxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="-16"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
