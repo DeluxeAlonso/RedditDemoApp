@@ -23,6 +23,9 @@
 		E266BCEB267318A800C139BB /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCEA267318A800C139BB /* PostClient.swift */; };
 		E266BCED267318B200C139BB /* PostClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCEC267318B200C139BB /* PostClientProtocol.swift */; };
 		E266BCEF26731E7D00C139BB /* GlobalNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCEE26731E7D00C139BB /* GlobalNavigationManager.swift */; };
+		E266BCF42673288800C139BB /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E266BCF32673288800C139BB /* PostCell.xib */; };
+		E266BCF62673289E00C139BB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCF52673289E00C139BB /* PostCell.swift */; };
+		E266BCF8267328AB00C139BB /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCF7267328AB00C139BB /* PostCellViewModel.swift */; };
 		E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD262671D9B400D95FA8 /* AppDelegate.swift */; };
 		E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD282671D9B400D95FA8 /* SceneDelegate.swift */; };
 		E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */; };
@@ -92,6 +95,9 @@
 		E266BCEA267318A800C139BB /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
 		E266BCEC267318B200C139BB /* PostClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClientProtocol.swift; sourceTree = "<group>"; };
 		E266BCEE26731E7D00C139BB /* GlobalNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalNavigationManager.swift; sourceTree = "<group>"; };
+		E266BCF32673288800C139BB /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		E266BCF52673289E00C139BB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		E266BCF7267328AB00C139BB /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		E268CD232671D9B400D95FA8 /* RedditDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E268CD262671D9B400D95FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E268CD282671D9B400D95FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +179,16 @@
 				E266BCEC267318B200C139BB /* PostClientProtocol.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		E266BCF22673286A00C139BB /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E266BCF32673288800C139BB /* PostCell.xib */,
+				E266BCF52673289E00C139BB /* PostCell.swift */,
+				E266BCF7267328AB00C139BB /* PostCellViewModel.swift */,
+			);
+			path = ViewComponents;
 			sourceTree = "<group>";
 		};
 		E268CD1A2671D9B400D95FA8 = {
@@ -365,6 +381,7 @@
 		E268CDA22671ECBE00D95FA8 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				E266BCF22673286A00C139BB /* ViewComponents */,
 				E268CDA32671ECD500D95FA8 /* PostsViewController.swift */,
 				E266BCCC267275F900C139BB /* PostsViewModel.swift */,
 				E266BCCE2672760500C139BB /* PostsInteractor.swift */,
@@ -482,6 +499,7 @@
 			files = (
 				E268CD9F2671E9D200D95FA8 /* Posts.storyboard in Resources */,
 				E268CD362671D9B800D95FA8 /* LaunchScreen.storyboard in Resources */,
+				E266BCF42673288800C139BB /* PostCell.xib in Resources */,
 				E268CD332671D9B800D95FA8 /* Assets.xcassets in Resources */,
 				E268CD7F2671E07B00D95FA8 /* Login.storyboard in Resources */,
 			);
@@ -508,6 +526,7 @@
 				E268CDA12671EB1300D95FA8 /* PostsSplitViewController.swift in Sources */,
 				E266BCED267318B200C139BB /* PostClientProtocol.swift in Sources */,
 				E266BCD72672763200C139BB /* PostDetailCoordinator.swift in Sources */,
+				E266BCF62673289E00C139BB /* PostCell.swift in Sources */,
 				E266BCDE2672CC9400C139BB /* PostsViewState.swift in Sources */,
 				E268CD8D2671E4FB00D95FA8 /* AuthPermissionViewModel.swift in Sources */,
 				E266BCD12672760F00C139BB /* PostsCoordinator.swift in Sources */,
@@ -529,6 +548,7 @@
 				E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */,
 				E268CD822671E0CD00D95FA8 /* Storyboarded.swift in Sources */,
 				E268CD6C2671DD0800D95FA8 /* Bindable.swift in Sources */,
+				E266BCF8267328AB00C139BB /* PostCellViewModel.swift in Sources */,
 				E268CD962671E55B00D95FA8 /* CustomNotification.swift in Sources */,
 				E268CD972671E55B00D95FA8 /* NotificationNameable.swift in Sources */,
 				E268CD472671DB2900D95FA8 /* LoginCoordinator.swift in Sources */,

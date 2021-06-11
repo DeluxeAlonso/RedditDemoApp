@@ -27,7 +27,7 @@ final class PostsViewModel: PostsViewModelProtocol {
         interactor.getTopPosts { result in
             switch result {
             case .success(let posts):
-                break
+                self.updatePosts(posts)
             case .failure(let error):
                 break
             }
@@ -44,6 +44,13 @@ final class PostsViewModel: PostsViewModelProtocol {
 
     func hideAllPosts() {
 
+    }
+
+    // MARK: - Private
+
+    private func updatePosts(_ posts: [Post]) {
+        self.posts = posts
+        viewState.value = .populated(self.posts)
     }
 
 }

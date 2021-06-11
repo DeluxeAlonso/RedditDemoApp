@@ -19,4 +19,8 @@ struct Post: Equatable {
 
     var read: Bool = false
 
+    var fullName: String {
+        return [kind, id].joined(separator: "_")
+    }
+
 }
