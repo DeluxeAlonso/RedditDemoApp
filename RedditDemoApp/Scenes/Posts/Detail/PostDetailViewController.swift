@@ -9,26 +9,30 @@ import UIKit
 
 class PostDetailViewController: UIViewController, Storyboarded {
 
+    @IBOutlet private weak var titleLabel: UILabel!
     static var storyboardName: String = "Posts"
 
     var viewModel: PostDetailViewModelProtocol?
     weak var coordinator: PostDetailCoordinatorProtocol?
 
+    // MARK: - Initializers
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        setupBindings()
+    }
 
-        // Do any additional setup after loading the view.
+    // MARK: - Private
+
+    private func setupUI() {
+        titleLabel.textColor = .label
+        titleLabel.font = FontHelper.semiBold(withSize: 36)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupBindings() {
+        title = viewModel?.author
+        titleLabel.text = viewModel?.title
     }
-    */
 
 }

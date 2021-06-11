@@ -54,9 +54,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-DU-ktp">
-                                <rect key="frame" x="186" y="438" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd3-DU-ktp">
+                                <rect key="frame" x="186.5" y="438" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,7 +63,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o1h-pV-tOm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o1h-pV-tOm" secondAttribute="leading" constant="48" id="NPg-9k-Cvr"/>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="centerY" secondItem="QQT-oc-IK9" secondAttribute="centerY" id="X9c-YP-iNW"/>
+                            <constraint firstItem="cd3-DU-ktp" firstAttribute="centerX" secondItem="QQT-oc-IK9" secondAttribute="centerX" id="q0G-64-d3C"/>
+                            <constraint firstItem="o1h-pV-tOm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cd3-DU-ktp" secondAttribute="trailing" constant="48" id="xYt-Or-6Xj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="cd3-DU-ktp" id="wJY-Sh-TsM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDN-B9-7mi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

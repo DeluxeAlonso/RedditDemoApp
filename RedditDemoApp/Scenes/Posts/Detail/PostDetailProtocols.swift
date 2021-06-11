@@ -7,10 +7,11 @@
 
 import Foundation
 
-protocol PostDetailCoordinatorProtocol: AnyObject {
-    
-}
+protocol PostDetailCoordinatorProtocol: AnyObject {}
 
 protocol PostDetailViewModelProtocol {
+
+    var author: String { get }
+    var title: String { get }
     
 }

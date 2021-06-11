@@ -13,13 +13,15 @@ final class PostDetailCoordinator: Coordinator, PostDetailCoordinatorProtocol {
     var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
 
+    var post: Post!
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
         let viewController = PostDetailViewController.instantiate()
-        viewController.viewModel = PostDetailViewModel()
+        viewController.viewModel = PostDetailViewModel(post: post)
         viewController.coordinator = self
 
         let detailNavigationController = UINavigationController()
