@@ -71,6 +71,8 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
 
 }
 
+// MARK: - AuthPermissionViewControllerDelegate
+
 extension LoginViewController: AuthPermissionViewControllerDelegate {
 
     func authPermissionViewController(_ authPermissionViewController: AuthPermissionViewController,

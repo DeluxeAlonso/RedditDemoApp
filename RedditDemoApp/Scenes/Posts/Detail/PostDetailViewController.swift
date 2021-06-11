@@ -16,7 +16,7 @@ class PostDetailViewController: UIViewController, Storyboarded {
     var viewModel: PostDetailViewModelProtocol?
     weak var coordinator: PostDetailCoordinatorProtocol?
 
-    // MARK: - Initializers
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
