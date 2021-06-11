@@ -36,6 +36,11 @@
 		E266BD082673352200C139BB /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD072673352200C139BB /* UIView+Layout.swift */; };
 		E266BD0A2673374F00C139BB /* UIImageView+Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD092673374F00C139BB /* UIImageView+Caching.swift */; };
 		E266BD0C267349D100C139BB /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD0B267349D000C139BB /* Alertable.swift */; };
+		E266BD0F26734EFB00C139BB /* PostPictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD0E26734EFB00C139BB /* PostPictureDetailViewController.swift */; };
+		E266BD1126734F6300C139BB /* PostPictureDetailWebViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD1026734F6300C139BB /* PostPictureDetailWebViewNavigation.swift */; };
+		E266BD1326734F8100C139BB /* PostPictureDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD1226734F8100C139BB /* PostPictureDetailCoordinator.swift */; };
+		E266BD1526734FA000C139BB /* PostPictureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD1426734FA000C139BB /* PostPictureDetailViewModel.swift */; };
+		E266BD1726734FAE00C139BB /* PostPictureDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BD1626734FAE00C139BB /* PostPictureDetailProtocols.swift */; };
 		E268CD272671D9B400D95FA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD262671D9B400D95FA8 /* AppDelegate.swift */; };
 		E268CD292671D9B400D95FA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD282671D9B400D95FA8 /* SceneDelegate.swift */; };
 		E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E268CD2F2671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld */; };
@@ -118,6 +123,11 @@
 		E266BD072673352200C139BB /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		E266BD092673374F00C139BB /* UIImageView+Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Caching.swift"; sourceTree = "<group>"; };
 		E266BD0B267349D000C139BB /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		E266BD0E26734EFB00C139BB /* PostPictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureDetailViewController.swift; sourceTree = "<group>"; };
+		E266BD1026734F6300C139BB /* PostPictureDetailWebViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureDetailWebViewNavigation.swift; sourceTree = "<group>"; };
+		E266BD1226734F8100C139BB /* PostPictureDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureDetailCoordinator.swift; sourceTree = "<group>"; };
+		E266BD1426734FA000C139BB /* PostPictureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureDetailViewModel.swift; sourceTree = "<group>"; };
+		E266BD1626734FAE00C139BB /* PostPictureDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPictureDetailProtocols.swift; sourceTree = "<group>"; };
 		E268CD232671D9B400D95FA8 /* RedditDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E268CD262671D9B400D95FA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E268CD282671D9B400D95FA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +221,18 @@
 				E266BD032673347200C139BB /* CustomFooterView.swift */,
 			);
 			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		E266BD0D26734ED200C139BB /* PictureDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E266BD0E26734EFB00C139BB /* PostPictureDetailViewController.swift */,
+				E266BD1026734F6300C139BB /* PostPictureDetailWebViewNavigation.swift */,
+				E266BD1226734F8100C139BB /* PostPictureDetailCoordinator.swift */,
+				E266BD1426734FA000C139BB /* PostPictureDetailViewModel.swift */,
+				E266BD1626734FAE00C139BB /* PostPictureDetailProtocols.swift */,
+			);
+			path = PictureDetail;
 			sourceTree = "<group>";
 		};
 		E268CD1A2671D9B400D95FA8 = {
@@ -425,6 +447,7 @@
 		E268CDA52671ECDD00D95FA8 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E266BD0D26734ED200C139BB /* PictureDetail */,
 				E268CDA62671ECF800D95FA8 /* PostDetailViewController.swift */,
 				E266BCD42672762500C139BB /* PostDetailViewModel.swift */,
 				E266BCD62672763200C139BB /* PostDetailCoordinator.swift */,
@@ -553,8 +576,10 @@
 				E268CD842671E1C100D95FA8 /* AppConstants.swift in Sources */,
 				E268CD9A2671E60900D95FA8 /* UIView+Fade.swift in Sources */,
 				E268CD912671E4FB00D95FA8 /* AuthPermissionProtocols.swift in Sources */,
+				E266BD1726734FAE00C139BB /* PostPictureDetailProtocols.swift in Sources */,
 				E268CDA12671EB1300D95FA8 /* PostsSplitViewController.swift in Sources */,
 				E266BCED267318B200C139BB /* PostClientProtocol.swift in Sources */,
+				E266BD1126734F6300C139BB /* PostPictureDetailWebViewNavigation.swift in Sources */,
 				E266BCD72672763200C139BB /* PostDetailCoordinator.swift in Sources */,
 				E266BCF62673289E00C139BB /* PostCell.swift in Sources */,
 				E266BCDE2672CC9400C139BB /* PostsViewState.swift in Sources */,
@@ -577,12 +602,14 @@
 				E268CD4E2671DBAF00D95FA8 /* Coordinator.swift in Sources */,
 				E266BD082673352200C139BB /* UIView+Layout.swift in Sources */,
 				E266BCEB267318A800C139BB /* PostClient.swift in Sources */,
+				E266BD1526734FA000C139BB /* PostPictureDetailViewModel.swift in Sources */,
 				E266BCEF26731E7D00C139BB /* GlobalNavigationManager.swift in Sources */,
 				E268CDA72671ECF800D95FA8 /* PostDetailViewController.swift in Sources */,
 				E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */,
 				E268CD822671E0CD00D95FA8 /* Storyboarded.swift in Sources */,
 				E268CD6C2671DD0800D95FA8 /* Bindable.swift in Sources */,
 				E266BCF8267328AB00C139BB /* PostCellViewModel.swift in Sources */,
+				E266BD1326734F8100C139BB /* PostPictureDetailCoordinator.swift in Sources */,
 				E268CD962671E55B00D95FA8 /* CustomNotification.swift in Sources */,
 				E268CD972671E55B00D95FA8 /* NotificationNameable.swift in Sources */,
 				E268CD472671DB2900D95FA8 /* LoginCoordinator.swift in Sources */,
@@ -614,6 +641,7 @@
 				E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */,
 				E266BCDC2672C92E00C139BB /* Post.swift in Sources */,
 				E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */,
+				E266BD0F26734EFB00C139BB /* PostPictureDetailViewController.swift in Sources */,
 				E266BD0C267349D100C139BB /* Alertable.swift in Sources */,
 				E266BCCD267275F900C139BB /* PostsViewModel.swift in Sources */,
 			);

@@ -1,18 +1,13 @@
 //
-//  PostDetailViewController.swift
+//  PostPictureDetailViewController.swift
 //  RedditDemoApp
 //
-//  Created by Alonso on 10/06/21.
+//  Created by Alonso on 11/06/21.
 //
 
 import UIKit
 
-class PostDetailViewController: UIViewController, Storyboarded {
-
-    static var storyboardName: String = "Posts"
-
-    var viewModel: PostDetailViewModelProtocol?
-    weak var coordinator: PostDetailCoordinatorProtocol?
+class PostPictureDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

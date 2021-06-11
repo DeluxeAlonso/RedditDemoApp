@@ -30,7 +30,12 @@ final class PostsCoordinator: NSObject, PostsCoordinatorProtocol {
     }
 
     func showPostDetail(_ post: Post) {
+        let coordinator = PostDetailCoordinator(navigationController: navigationController)
 
+        coordinator.parentCoordinator = unwrappedParentCoordinator
+
+        unwrappedParentCoordinator.childCoordinators.append(coordinator)
+        coordinator.start()
     }
 
 }

@@ -25,6 +25,7 @@ protocol PostsViewModelProtocol {
     func hideAllPosts()
 
     func numberOfPosts() -> Int
+    func post(at index: Int) -> Post
     func buildPostCellModel(at index: Int) -> PostCellViewModelProtocol
 
 }

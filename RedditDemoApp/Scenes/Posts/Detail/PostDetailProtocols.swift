@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol PostDetailCoordinatorProtocol: AnyObject {
+    
+}
+
+protocol PostDetailViewModelProtocol {
+    
+}

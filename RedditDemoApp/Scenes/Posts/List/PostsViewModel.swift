@@ -60,6 +60,10 @@ final class PostsViewModel: PostsViewModelProtocol {
         return PostCellViewModel(post: post)
     }
 
+    func post(at index: Int) -> Post {
+        return posts[index]
+    }
+
     // MARK: - Private
 
     private func updatePosts(_ posts: [Post], state: PostsViewState) {

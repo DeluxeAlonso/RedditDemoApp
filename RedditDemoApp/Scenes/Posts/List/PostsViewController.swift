@@ -151,7 +151,8 @@ extension PostsViewController: UITableViewDataSource {
 extension PostsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        guard let viewModel = viewModel else { return }
+        coordinator?.showPostDetail(viewModel.post(at: indexPath.row))
     }
 
 }
