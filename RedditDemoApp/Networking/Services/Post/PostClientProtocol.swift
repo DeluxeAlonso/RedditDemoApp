@@ -11,6 +11,7 @@ protocol PostClientProtocol {
 
     func getTopPosts(accessToken: String,
                      after: String?,
+                     limit: Int,
                      completion: @escaping (Result<ListingResponse<PostResponse>, APIError>) -> Void)
 
 }

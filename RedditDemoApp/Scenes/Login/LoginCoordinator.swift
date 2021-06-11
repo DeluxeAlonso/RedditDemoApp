@@ -13,6 +13,8 @@ final class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
     var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
 
+    private var globalNavigationManager = GlobalNavigationManager()
+
     // MARK: - Initializers
 
     init(navigationController: UINavigationController) {
@@ -45,7 +47,7 @@ final class LoginCoordinator: Coordinator, LoginCoordinatorProtocol {
     }
 
     func showMainScreen(from viewController: UIViewController) {
-        GlobalNavigationManager.shared.showMainScreen(from: viewController)
+        globalNavigationManager.showMainScreen(from: viewController)
     }
 
 }

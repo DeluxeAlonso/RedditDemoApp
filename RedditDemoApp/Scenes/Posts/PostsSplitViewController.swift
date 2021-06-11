@@ -11,6 +11,12 @@ class PostsSplitViewController: UISplitViewController, Storyboarded, UISplitView
 
     static var storyboardName: String = "Posts"
 
+    private var globalNavigationManager = GlobalNavigationManager()
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: CustomNotification.didSignOut.name, object: nil)
+    }
+
     // MARK: - Initializers
 
     init(preferredDisplayMode: UISplitViewController.DisplayMode) {
@@ -36,7 +42,7 @@ class PostsSplitViewController: UISplitViewController, Storyboarded, UISplitView
         NotificationCenter.default.addObserver(forName: CustomNotification.didSignOut.name,
                                                object: nil, queue: .current) { [weak self] _ in
             guard let self = self else { return }
-            GlobalNavigationManager.shared.showLoginScreen(from: self)
+            self.globalNavigationManager.showLoginScreen(from: self)
         }
     }
 

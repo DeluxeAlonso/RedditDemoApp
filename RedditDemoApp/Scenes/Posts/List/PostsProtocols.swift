@@ -20,9 +20,19 @@ protocol PostsViewModelProtocol {
      */
     func getTopPosts(shouldRefresh: Bool)
 
+    /**
+     Marks post at a specific index as read.
+     */
     func markAsRead(at index: Int)
 
+    /**
+     Hides post at a specific index.
+     */
     func hidePost(at index:Int)
+
+    /**
+     Hides all posts.
+     */
     func hideAllPosts()
 
     func numberOfPosts() -> Int

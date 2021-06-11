@@ -31,5 +31,6 @@ struct ColorPalette {
     static let whiteColor = UIColor(white: 249 / 255, alpha: 1)
     static let blackColor = UIColor(white: 40 / 255, alpha: 1)
     static let darkGrayColor = UIColor.darkGray
+    static let orangeColor = UIColor(withIntRed: 251, green: 38, blue: 21, alpha: 1)
 
 }

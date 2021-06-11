@@ -33,7 +33,7 @@ class AuthPermissionViewController: UIViewController, Storyboarded {
     weak var delegate: AuthPermissionViewControllerDelegate?
 
     deinit {
-        print("dkfslfs")
+        NotificationCenter.default.removeObserver(self, name: CustomNotification.authCodeReceived.name, object: nil)
     }
 
     // MARK: - Lifecycle
