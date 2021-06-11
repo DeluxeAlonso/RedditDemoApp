@@ -257,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				E266BD312673ADB400C139BB /* Cells */,
-				E266BCF7267328AB00C139BB /* PostCellViewModel.swift */,
 				E266BD012673345E00C139BB /* LoadingFooterView.swift */,
 				E266BD032673347200C139BB /* CustomFooterView.swift */,
 			);
@@ -300,6 +299,7 @@
 		E266BD312673ADB400C139BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E266BCF7267328AB00C139BB /* PostCellViewModel.swift */,
 				E266BCF32673288800C139BB /* PostCell.xib */,
 				E266BCF52673289E00C139BB /* PostCell.swift */,
 			);

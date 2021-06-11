@@ -137,6 +137,8 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
 
 }
 
+// MARK: - UITableViewDataSource
+
 extension PostsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -154,6 +156,8 @@ extension PostsViewController: UITableViewDataSource {
 
 }
 
+// MARK: - UITableViewDelegate
+
 extension PostsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -163,6 +167,8 @@ extension PostsViewController: UITableViewDelegate {
     }
 
 }
+
+// MARK: - PostCellDelegate
 
 extension PostsViewController: PostCellDelegate {
 

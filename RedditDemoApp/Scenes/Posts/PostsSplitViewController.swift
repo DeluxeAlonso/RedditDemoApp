@@ -7,9 +7,7 @@
 
 import UIKit
 
-class PostsSplitViewController: UISplitViewController, Storyboarded, UISplitViewControllerDelegate {
-
-    static var storyboardName: String = "Posts"
+class PostsSplitViewController: UISplitViewController, UISplitViewControllerDelegate {
 
     private var globalNavigationManager = GlobalNavigationManager()
 
