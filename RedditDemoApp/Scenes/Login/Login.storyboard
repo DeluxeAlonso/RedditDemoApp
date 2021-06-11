@@ -91,13 +91,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="red-kh-lSi">
                                 <rect key="frame" x="0.0" y="761" width="390" height="49"/>
                                 <items>
-                                    <barButtonItem image="arrowshape.turn.up.left" catalog="system" id="bzb-6V-a3t" userLabel="Back Bar Button Item">
+                                    <barButtonItem enabled="NO" image="arrowshape.turn.up.left" catalog="system" id="bzb-6V-a3t" userLabel="Back Bar Button Item">
                                         <connections>
                                             <action selector="backButtonAction:" destination="BeU-FE-nm9" id="UNv-5z-S8z"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" systemItem="fixedSpace" id="N6S-Q2-xC6"/>
-                                    <barButtonItem image="arrowshape.turn.up.right" catalog="system" id="M64-Ar-KHu" userLabel="Forward Bar Button Item">
+                                    <barButtonItem enabled="NO" image="arrowshape.turn.up.right" catalog="system" id="M64-Ar-KHu" userLabel="Forward Bar Button Item">
                                         <connections>
                                             <action selector="forwardButtonAction:" destination="BeU-FE-nm9" id="0po-YP-maG"/>
                                         </connections>
@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tuw-Nf-HvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="94"/>
+            <point key="canvasLocation" x="1004.6153846153845" y="93.838862559241704"/>
         </scene>
     </scenes>
     <designables>
