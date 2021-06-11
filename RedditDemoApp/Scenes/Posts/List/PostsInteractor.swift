@@ -26,7 +26,7 @@ final class PostsInteractor: PostsInteractorProtocol {
         let visitedPosts = visitedPostStore.findAll()
         let visitedIds = visitedPosts.map { $0.id }
 
-        postClient.getTopPosts(accessToken: accessToken, after: after) { result in
+        postClient.getTopPosts(accessToken: accessToken, after: after, limit: 50) { result in
             switch result {
             case .success(let response):
                 let posts = self.buildPosts(from: response, and: visitedIds)

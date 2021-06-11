@@ -21,16 +21,18 @@ class PostCell: UITableViewCell {
 
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var commentsLabel: UILabel!
     @IBOutlet private weak var readMarkImageView: UIImageView!
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
 
     var viewModel: PostCellViewModelProtocol? {
         didSet {
             setupBindings()
         }
     }
+
+    private var initialThumbnailWidthConstant: CGFloat!
 
     weak var delegate: PostCellDelegate?
 
@@ -51,6 +53,11 @@ class PostCell: UITableViewCell {
     private func setupUI() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(thumbnailTapGestureAction))
         thumbnailImageView.addGestureRecognizer(gesture)
+
+        authorLabel.font = FontHelper.light(withSize: 17)
+        descriptionLabel.font = FontHelper.light(withSize: 17)
+        dateLabel.font = FontHelper.light(withSize: 17)
+        commentsLabel.font = FontHelper.light(withSize: 17)
     }
 
     private func setupBindings() {
@@ -64,8 +71,9 @@ class PostCell: UITableViewCell {
 
         if let thumbnailURL = viewModel.thumbnailURL {
             thumbnailImageView.isHidden = false
-            thumbnailImageView.setImage(from: thumbnailURL)
+            thumbnailImageView.setImage(from: thumbnailURL, with: UIImage(named: "RedditLogo"))
         } else {
+            thumbnailImageView.image = UIImage(named: "RedditLogo")
             thumbnailImageView.isHidden = true
         }
     }

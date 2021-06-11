@@ -40,7 +40,7 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
 
     private func setupUI() {
         loginButton.setTitle(LocalizedStrings.login(), for: .normal)
-        loginButton.backgroundColor = ColorPalette.lightBlueColor
+        loginButton.backgroundColor = ColorPalette.orangeColor
         loginButton.setTitleColor(ColorPalette.whiteColor, for: .normal)
         loginButton.setTitleColor(ColorPalette.whiteColor.withAlphaComponent(0.5), for: .highlighted)
     }
