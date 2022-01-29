@@ -54,13 +54,8 @@ final class PostsInteractor: PostsInteractorProtocol {
         do {
             let response = try await postClient.getTopPosts(accessToken: accessToken, after: after, limit: 50)
             return buildPosts(from: response, and: visitedIds)
-        } catch let error as APIError {
-            switch error {
-            case .notAuthenticated:
-                AuthenticationManager.shared.signOut()
-            default:
-                break
-            }
+        } catch {
+            if case APIError.notAuthenticated = error { AuthenticationManager.shared.signOut() }
             throw error
         }
     }
