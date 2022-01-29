@@ -14,6 +14,8 @@ protocol APIClient {
     func fetch<T: Decodable>(with request: URLRequest,
                              decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>) -> Void)
 
+    func fetch<T: Decodable>(with request: URLRequest, decodingType: T.Type) async throws -> T
+
 }
 
 extension APIClient {
@@ -69,6 +71,25 @@ extension APIClient {
             }
         }
         task.resume()
+    }
+
+    // Async await
+
+    func fetch<T: Decodable>(with request: URLRequest, decodingType: T.Type) async throws -> T {
+        let (data, response) = try await session.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.requestFailed
+        }
+        guard httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
+            throw APIError(response: httpResponse)
+        }
+        do {
+            let decoder = JSONDecoder()
+            let genericModel = try decoder.decode(decodingType, from: data)
+            return genericModel
+        } catch {
+            throw APIError.requestFailed
+        }
     }
 
 }
