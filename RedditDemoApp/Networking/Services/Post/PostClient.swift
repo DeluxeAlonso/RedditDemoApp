@@ -37,4 +37,9 @@ final class PostClient: APIClient, PostClientProtocol {
         }, completion: completion)
     }
 
+    func getTopPosts(accessToken: String, after: String?, limit: Int) async throws -> ListingResponse<PostResponse> {
+        let request = PostProvider.getTopPosts(accessToken: accessToken, after: after, limit: limit).request
+        return try await fetch(with: request, decodingType: ListingResponse<PostResponse>.self)
+    }
+
 }
