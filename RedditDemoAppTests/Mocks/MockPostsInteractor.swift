@@ -20,4 +20,8 @@ class MockPostsInteractor: PostsInteractorProtocol {
         completion(markPostAsReadResult)
     }
 
+    func getTopPosts(after: String?) async throws -> [Post] {
+        return try getTopPostsResult.get()
+    }
+
 }

@@ -36,44 +36,82 @@ class PostsTests: XCTestCase {
 
     func testGetPostsEmpty() {
         //Arrange
-        mockInteractor.getTopPostsResult = Result.success([])
+        let expectation = XCTestExpectation(description: "View state should be set to empty")
         //Act
+        viewModelToTest.viewState.bind { state in
+            XCTAssertEqual(self.viewModelToTest.viewState.value, .empty)
+            expectation.fulfill()
+        }
+        mockInteractor.getTopPostsResult = Result.success([])
         viewModelToTest.getTopPosts(shouldRefresh: false)
         //Assert
-        XCTAssertEqual(viewModelToTest.viewState.value, .empty)
+        wait(for: [expectation], timeout: 5)
     }
 
     func testGetPostsError() {
         //Arrange
-        mockInteractor.getTopPostsResult = Result.failure(APIError.badRequest)
+        let expectation = XCTestExpectation(description: "View state should be set to bad request error")
         //Act
+        viewModelToTest.viewState.bind { state in
+            XCTAssertEqual(state, .error(APIError.badRequest))
+            expectation.fulfill()
+        }
+        mockInteractor.getTopPostsResult = Result.failure(APIError.badRequest)
         viewModelToTest.getTopPosts(shouldRefresh: false)
         //Assert
-        XCTAssertEqual(viewModelToTest.viewState.value, .error(APIError.badRequest))
+        wait(for: [expectation], timeout: 5)
     }
 
     func testGetPostsPaging() {
         //Arrange
         let postsToEvaluate = [Post.with(id: "1"), Post.with(id: "2")]
-        mockInteractor.getTopPostsResult = Result.success(postsToEvaluate)
+        let expectation = XCTestExpectation(description: "View state should be set to paging")
         //Act
+        viewModelToTest.viewState.bind { state in
+            XCTAssertEqual(state, .paging(postsToEvaluate, after: postsToEvaluate.last?.fullName))
+            expectation.fulfill()
+        }
+        mockInteractor.getTopPostsResult = Result.success(postsToEvaluate)
         viewModelToTest.getTopPosts(shouldRefresh: false)
-        let next = postsToEvaluate.last?.fullName
         //Assert
-        XCTAssertEqual(viewModelToTest.viewState.value, .paging(postsToEvaluate, after: next))
+        wait(for: [expectation], timeout: 5)
     }
 
     func testGetPostsPopulated() {
         //Arrange
         let postsToEvaluate = [Post.with(id: "1"), Post.with(id: "2")]
-        mockInteractor.getTopPostsResult = Result.success(postsToEvaluate)
+
+        var statesToReceive: [PostsViewState] = [
+            .paging(postsToEvaluate, after: postsToEvaluate.last?.fullName),
+            .populated(postsToEvaluate)
+        ]
+        let expectation = XCTestExpectation(description: "View state should be set to populated state after a paging state")
         //Act
+        viewModelToTest.viewState.bind { state in
+            XCTAssertEqual(state, statesToReceive.removeFirst())
+            expectation.fulfill()
+        }
+        mockInteractor.getTopPostsResult = Result.success(postsToEvaluate)
         viewModelToTest.getTopPosts(shouldRefresh: false)
-        // Seconds fetch should return empty values
-        mockInteractor.getTopPostsResult = Result.success([])
-        viewModelToTest.getTopPosts(shouldRefresh: false)
+        // Seconds fetch should return empty values to simulate no more pages
+        _ = Task.delayed(byTimeInterval: 0.5) {
+            self.mockInteractor.getTopPostsResult = Result.success([])
+            self.viewModelToTest.getTopPosts(shouldRefresh: false)
+        }
         //Assert
-        XCTAssertEqual(viewModelToTest.viewState.value, .populated(postsToEvaluate))
+        wait(for: [expectation], timeout: 5)
     }
 
+}
+
+extension Task where Failure == Error {
+    static func delayed(byTimeInterval delayInterval: TimeInterval,
+                        priority: TaskPriority? = nil,
+                        operation: @escaping @Sendable () async throws -> Success) -> Task {
+        Task(priority: priority) {
+            let delay = UInt64(delayInterval * 1_000_000_000)
+            try await Task<Never, Never>.sleep(nanoseconds: delay)
+            return try await operation()
+        }
+    }
 }
