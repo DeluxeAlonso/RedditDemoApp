@@ -47,19 +47,19 @@ class LoginViewController: UIViewController, Storyboarded, Alertable {
 
     private func setupBindings() {
         guard let viewModel = viewModel else { return }
-        viewModel.startLoading.bind { [weak self] startLoading in
+        viewModel.startLoading.bind({ [weak self] startLoading in
             guard let self = self else { return }
             if startLoading {
                 self.loginButton.startAnimation()
             } else {
                 self.loginButton.stopAnimation()
             }
-        }
-        viewModel.didReceiveError.bind { [weak self] error in
+        }, on: .main)
+        viewModel.didReceiveError.bind({ [weak self] error in
             guard let self = self else { return }
             guard let error = error else { return }
             self.showAlert(message: error.localizedDescription)
-        }
+        }, on: .main)
     }
 
     // MARK: - Actions
