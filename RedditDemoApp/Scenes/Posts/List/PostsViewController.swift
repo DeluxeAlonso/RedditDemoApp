@@ -95,28 +95,22 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
     private func setupBindings() {
         viewModel?.viewState.bindAndFire({ [weak self] state in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.configureView(with: state)
-                self.configureTableViewPrefetchDataSource()
-                self.tableView.reloadSections([.zero], with: .fade)
-                self.tableView.refreshControl?.endRefreshing()
-            }
-        })
+            self.configureView(with: state)
+            self.configureTableViewPrefetchDataSource()
+            self.tableView.reloadSections([.zero], with: .fade)
+            self.tableView.refreshControl?.endRefreshing()
+        }, on: .main)
         viewModel?.didUpdatePost.bind({ [weak self] index in
             guard let index = index else { return }
-            DispatchQueue.main.async {
-                let indexPath = IndexPath(row: index, section: 0)
-                self?.tableView.reloadRows(at: [indexPath], with: .none)
-                self?.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            }
-        })
+            let indexPath = IndexPath(row: index, section: 0)
+            self?.tableView.reloadRows(at: [indexPath], with: .none)
+            self?.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }, on: .main)
         viewModel?.didRemovePost.bind({ [weak self] index in
             guard let index = index else { return }
-            DispatchQueue.main.async {
-                let indexPath = IndexPath(row: index, section: 0)
-                self?.tableView.deleteRows(at: [indexPath], with: .left)
-            }
-        })
+            let indexPath = IndexPath(row: index, section: 0)
+            self?.tableView.deleteRows(at: [indexPath], with: .left)
+        }, on: .main)
     }
 
     // MARK: - Actions

@@ -5,14 +5,18 @@
 //  Created by Alonso on 10/06/21.
 //
 
-class Bindable<T> {
+import Foundation
+
+final class Bindable<T> {
 
     typealias Listener = ((T) -> Void)
-    var listener: Listener?
+    private var listener: Listener?
+
+    private var dispatchQueue: DispatchQueue?
 
     var value: T {
         didSet {
-            listener?(value)
+            sendValue()
         }
     }
 
@@ -20,13 +24,33 @@ class Bindable<T> {
         self.value = value
     }
 
-    func bind(_ listener: Listener?) {
+    func bind(_ listener: Listener?, on dispatchQueue: DispatchQueue? = nil) {
         self.listener = listener
+        self.dispatchQueue = dispatchQueue
     }
 
-    func bindAndFire(_ listener: Listener?) {
+    func bindAndFire(_ listener: Listener?, on dispatchQueue: DispatchQueue? = nil) {
         self.listener = listener
-        listener?(value)
+        self.dispatchQueue = dispatchQueue
+        sendValue()
+    }
+
+    // MARK: - Private
+
+    private func sendValue() {
+        if let dispatchQueue = dispatchQueue {
+            dispatchQueue.async { self.listener?(self.value) }
+        } else {
+            self.listener?(self.value)
+        }
+    }
+
+}
+
+extension Bindable where T == Void {
+
+    func fire() {
+        sendValue()
     }
 
 }
