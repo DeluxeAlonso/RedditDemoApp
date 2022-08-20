@@ -12,7 +12,6 @@ var imageCache = NSCache<NSURL, UIImage>()
 extension UIImageView {
 
     func setImage(from url: URL, with placeholder: UIImage? = nil) {
-
         if let cached = imageCache.object(forKey: url as NSURL) {
             DispatchQueue.main.async {
                 self.image = cached
