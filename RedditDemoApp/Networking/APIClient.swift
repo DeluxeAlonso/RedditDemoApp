@@ -80,7 +80,6 @@ extension APIClient {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.requestFailed
         }
-        print("=====\(httpResponse.statusCode)")
         guard httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
             throw APIError(response: httpResponse)
         }
