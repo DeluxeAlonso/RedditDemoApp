@@ -101,6 +101,8 @@
 		E268CDB72671EFBA00D95FA8 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDB62671EFBA00D95FA8 /* KeychainStorage.swift */; };
 		E268CDBB2671EFFB00D95FA8 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */; };
 		E268CDBD2671F10000D95FA8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */; };
+		E274C4432929FE0300D575A7 /* BehaviorBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4422929FE0300D575A7 /* BehaviorBindable.swift */; };
+		E274C4452929FEDD00D575A7 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4442929FEDD00D575A7 /* BindableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +215,8 @@
 		E268CDB62671EFBA00D95FA8 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E274C4422929FE0300D575A7 /* BehaviorBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorBindable.swift; sourceTree = "<group>"; };
+		E274C4442929FEDD00D575A7 /* BindableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,9 +428,9 @@
 		E268CD6A2671DCFD00D95FA8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E274C4412929FC2B00D575A7 /* Bindable */,
 				E268CDAF2671EF5600D95FA8 /* Keychain */,
 				E268CD922671E53F00D95FA8 /* Notifications */,
-				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
 				E268CD832671E1C100D95FA8 /* AppConstants.swift */,
 				E266BCE126730E1B00C139BB /* URLSchemeHost.swift */,
 				E266BCFB2673309100C139BB /* TableViewDataSourcePrefetching.swift */,
@@ -577,6 +581,16 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		E274C4412929FC2B00D575A7 /* Bindable */ = {
+			isa = PBXGroup;
+			children = (
+				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
+				E274C4422929FE0300D575A7 /* BehaviorBindable.swift */,
+				E274C4442929FEDD00D575A7 /* BindableProtocol.swift */,
+			);
+			path = Bindable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,6 +719,7 @@
 				E268CD912671E4FB00D95FA8 /* AuthPermissionProtocols.swift in Sources */,
 				E266BD1726734FAE00C139BB /* PostPictureDetailProtocols.swift in Sources */,
 				E266BD332673ADDF00C139BB /* Date+Formatting.swift in Sources */,
+				E274C4432929FE0300D575A7 /* BehaviorBindable.swift in Sources */,
 				E268CDA12671EB1300D95FA8 /* PostsSplitViewController.swift in Sources */,
 				E266BCED267318B200C139BB /* PostClientProtocol.swift in Sources */,
 				E266BD1126734F6300C139BB /* PostPictureDetailWebViewNavigation.swift in Sources */,
@@ -771,6 +786,7 @@
 				E268CD682671DCA600D95FA8 /* URLRequest+Headers.swift in Sources */,
 				E266BCFA2673306500C139BB /* UITableView+Extensions.swift in Sources */,
 				E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */,
+				E274C4452929FEDD00D575A7 /* BindableProtocol.swift in Sources */,
 				E266BCDC2672C92E00C139BB /* Post.swift in Sources */,
 				E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */,
 				E266BD0F26734EFB00C139BB /* PostPictureDetailViewController.swift in Sources */,
