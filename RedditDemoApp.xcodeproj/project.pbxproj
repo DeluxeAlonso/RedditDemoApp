@@ -424,9 +424,9 @@
 		E268CD6A2671DCFD00D95FA8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E274C4412929FC2B00D575A7 /* Bindable */,
 				E268CDAF2671EF5600D95FA8 /* Keychain */,
 				E268CD922671E53F00D95FA8 /* Notifications */,
-				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
 				E268CD832671E1C100D95FA8 /* AppConstants.swift */,
 				E266BCE126730E1B00C139BB /* URLSchemeHost.swift */,
 				E266BCFB2673309100C139BB /* TableViewDataSourcePrefetching.swift */,
@@ -575,6 +575,14 @@
 				E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E274C4412929FC2B00D575A7 /* Bindable */ = {
+			isa = PBXGroup;
+			children = (
+				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
+			);
+			path = Bindable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
