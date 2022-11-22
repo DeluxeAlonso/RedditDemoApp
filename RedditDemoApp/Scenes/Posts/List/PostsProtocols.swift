@@ -9,9 +9,9 @@ import Foundation
 
 protocol PostsViewModelProtocol {
 
-    var viewState: Bindable<PostsViewState> { get }
-    var didUpdatePost: Bindable<Int?> { get }
-    var didRemovePost: Bindable<Int?> { get }
+    var viewState: Bindable_Deprecated<PostsViewState> { get }
+    var didUpdatePost: Bindable_Deprecated<Int?> { get }
+    var didRemovePost: Bindable_Deprecated<Int?> { get }
 
     var needsPrefetch: Bool { get }
 

@@ -1,13 +1,13 @@
 //
-//  BehaviorBindable.swift
+//  Bindable_Deprecated.swift
 //  RedditDemoApp
 //
-//  Created by Alonso on 20/11/22.
+//  Created by Alonso on 10/06/21.
 //
 
-import Dispatch
+import Foundation
 
-final class BehaviorBindable<T>: Bindable {
+final class Bindable_Deprecated<T> {
 
     typealias Listener = ((T) -> Void)
     private var listener: Listener?
@@ -24,24 +24,33 @@ final class BehaviorBindable<T>: Bindable {
         self.value = value
     }
 
-    func bind(_ listener: @escaping Listener, on dispatchQueue: DispatchQueue? = nil) {
+    func bind(_ listener: Listener?, on dispatchQueue: DispatchQueue? = nil) {
         self.listener = listener
         self.dispatchQueue = dispatchQueue
     }
 
-    func bindAndFire(_ listener: @escaping Listener, on dispatchQueue: DispatchQueue? = nil) {
+    func bindAndFire(_ listener: Listener?, on dispatchQueue: DispatchQueue? = nil) {
         self.listener = listener
         self.dispatchQueue = dispatchQueue
         sendValue()
     }
 
     // MARK: - Private
+
     private func sendValue() {
         if let dispatchQueue = dispatchQueue {
             dispatchQueue.async { self.listener?(self.value) }
         } else {
             self.listener?(self.value)
         }
+    }
+
+}
+
+extension Bindable_Deprecated where T == Void {
+
+    func fire() {
+        sendValue()
     }
 
 }

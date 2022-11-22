@@ -2,55 +2,16 @@
 //  Bindable.swift
 //  RedditDemoApp
 //
-//  Created by Alonso on 10/06/21.
+//  Created by Alonso on 20/11/22.
 //
 
-import Foundation
+import Dispatch
 
-final class Bindable<T> {
+protocol Bindable {
 
-    typealias Listener = ((T) -> Void)
-    private var listener: Listener?
+    associatedtype Model
 
-    private var dispatchQueue: DispatchQueue?
-
-    var value: T {
-        didSet {
-            sendValue()
-        }
-    }
-
-    init(_ value: T) {
-        self.value = value
-    }
-
-    func bind(_ listener: Listener?, on dispatchQueue: DispatchQueue? = nil) {
-        self.listener = listener
-        self.dispatchQueue = dispatchQueue
-    }
-
-    func bindAndFire(_ listener: Listener?, on dispatchQueue: DispatchQueue? = nil) {
-        self.listener = listener
-        self.dispatchQueue = dispatchQueue
-        sendValue()
-    }
-
-    // MARK: - Private
-
-    private func sendValue() {
-        if let dispatchQueue = dispatchQueue {
-            dispatchQueue.async { self.listener?(self.value) }
-        } else {
-            self.listener?(self.value)
-        }
-    }
-
-}
-
-extension Bindable where T == Void {
-
-    func fire() {
-        sendValue()
-    }
+    func bind(_ listener: @escaping ((Model) -> Void), on dispatchQueue: DispatchQueue?)
+    func bindAndFire(_ listener: @escaping ((Model) -> Void), on dispatchQueue: DispatchQueue?)
 
 }

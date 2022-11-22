@@ -11,8 +11,8 @@ final class LoginViewModel: LoginViewModelProtocol {
 
     private let interactor: LoginInteractorProtocol
 
-    private(set) var startLoading: Bindable<Bool> = Bindable(false)
-    private(set) var didReceiveError: Bindable<Error?> = Bindable(nil)
+    private(set) var startLoading: Bindable_Deprecated<Bool> = Bindable_Deprecated(false)
+    private(set) var didReceiveError: Bindable_Deprecated<Error?> = Bindable_Deprecated(nil)
 
     var loginDidFinish: (() -> Void)?
 

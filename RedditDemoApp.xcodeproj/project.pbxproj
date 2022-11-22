@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E231DB9F292C842400926617 /* PublishBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231DB9E292C842300926617 /* PublishBindable.swift */; };
 		E266BCCD267275F900C139BB /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCCC267275F900C139BB /* PostsViewModel.swift */; };
 		E266BCCF2672760500C139BB /* PostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCCE2672760500C139BB /* PostsInteractor.swift */; };
 		E266BCD12672760F00C139BB /* PostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266BCD02672760F00C139BB /* PostsCoordinator.swift */; };
@@ -66,7 +67,7 @@
 		E268CD662671DCA600D95FA8 /* Dictionary+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD622671DCA600D95FA8 /* Dictionary+Format.swift */; };
 		E268CD682671DCA600D95FA8 /* URLRequest+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD642671DCA600D95FA8 /* URLRequest+Headers.swift */; };
 		E268CD692671DCA600D95FA8 /* CharacterSet+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD652671DCA600D95FA8 /* CharacterSet+Filtering.swift */; };
-		E268CD6C2671DD0800D95FA8 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD6B2671DD0800D95FA8 /* Bindable.swift */; };
+		E268CD6C2671DD0800D95FA8 /* Bindable_Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD6B2671DD0800D95FA8 /* Bindable_Deprecated.swift */; };
 		E268CD6F2671DD4B00D95FA8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD6E2671DD4B00D95FA8 /* Endpoint.swift */; };
 		E268CD712671DD5500D95FA8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD702671DD5500D95FA8 /* APIError.swift */; };
 		E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CD722671DD6000D95FA8 /* APIClient.swift */; };
@@ -102,7 +103,7 @@
 		E268CDBB2671EFFB00D95FA8 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */; };
 		E268CDBD2671F10000D95FA8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */; };
 		E274C4432929FE0300D575A7 /* BehaviorBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4422929FE0300D575A7 /* BehaviorBindable.swift */; };
-		E274C4452929FEDD00D575A7 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4442929FEDD00D575A7 /* BindableProtocol.swift */; };
+		E274C4452929FEDD00D575A7 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4442929FEDD00D575A7 /* Bindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E231DB9E292C842300926617 /* PublishBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishBindable.swift; sourceTree = "<group>"; };
 		E266BCCC267275F900C139BB /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		E266BCCE2672760500C139BB /* PostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractor.swift; sourceTree = "<group>"; };
 		E266BCD02672760F00C139BB /* PostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCoordinator.swift; sourceTree = "<group>"; };
@@ -180,7 +182,7 @@
 		E268CD622671DCA600D95FA8 /* Dictionary+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Format.swift"; sourceTree = "<group>"; };
 		E268CD642671DCA600D95FA8 /* URLRequest+Headers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Headers.swift"; sourceTree = "<group>"; };
 		E268CD652671DCA600D95FA8 /* CharacterSet+Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Filtering.swift"; sourceTree = "<group>"; };
-		E268CD6B2671DD0800D95FA8 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		E268CD6B2671DD0800D95FA8 /* Bindable_Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable_Deprecated.swift; sourceTree = "<group>"; };
 		E268CD6E2671DD4B00D95FA8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E268CD702671DD5500D95FA8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E268CD722671DD6000D95FA8 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 		E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E274C4422929FE0300D575A7 /* BehaviorBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorBindable.swift; sourceTree = "<group>"; };
-		E274C4442929FEDD00D575A7 /* BindableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableProtocol.swift; sourceTree = "<group>"; };
+		E274C4442929FEDD00D575A7 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,9 +586,10 @@
 		E274C4412929FC2B00D575A7 /* Bindable */ = {
 			isa = PBXGroup;
 			children = (
-				E268CD6B2671DD0800D95FA8 /* Bindable.swift */,
+				E268CD6B2671DD0800D95FA8 /* Bindable_Deprecated.swift */,
 				E274C4422929FE0300D575A7 /* BehaviorBindable.swift */,
-				E274C4442929FEDD00D575A7 /* BindableProtocol.swift */,
+				E274C4442929FEDD00D575A7 /* Bindable.swift */,
+				E231DB9E292C842300926617 /* PublishBindable.swift */,
 			);
 			path = Bindable;
 			sourceTree = "<group>";
@@ -751,7 +754,7 @@
 				E268CDA72671ECF800D95FA8 /* PostDetailViewController.swift in Sources */,
 				E268CD312671D9B400D95FA8 /* RedditDemoApp.xcdatamodeld in Sources */,
 				E268CD822671E0CD00D95FA8 /* Storyboarded.swift in Sources */,
-				E268CD6C2671DD0800D95FA8 /* Bindable.swift in Sources */,
+				E268CD6C2671DD0800D95FA8 /* Bindable_Deprecated.swift in Sources */,
 				E266BD1C2673511B00C139BB /* Managed.swift in Sources */,
 				E266BCF8267328AB00C139BB /* PostCellViewModel.swift in Sources */,
 				E266BD1326734F8100C139BB /* PostPictureDetailCoordinator.swift in Sources */,
@@ -785,8 +788,9 @@
 				E268CDB72671EFBA00D95FA8 /* KeychainStorage.swift in Sources */,
 				E268CD682671DCA600D95FA8 /* URLRequest+Headers.swift in Sources */,
 				E266BCFA2673306500C139BB /* UITableView+Extensions.swift in Sources */,
+				E231DB9F292C842400926617 /* PublishBindable.swift in Sources */,
 				E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */,
-				E274C4452929FEDD00D575A7 /* BindableProtocol.swift in Sources */,
+				E274C4452929FEDD00D575A7 /* Bindable.swift in Sources */,
 				E266BCDC2672C92E00C139BB /* Post.swift in Sources */,
 				E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */,
 				E266BD0F26734EFB00C139BB /* PostPictureDetailViewController.swift in Sources */,
