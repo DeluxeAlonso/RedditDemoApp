@@ -103,7 +103,7 @@
 		E268CDBB2671EFFB00D95FA8 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */; };
 		E268CDBD2671F10000D95FA8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */; };
 		E274C4432929FE0300D575A7 /* BehaviorBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4422929FE0300D575A7 /* BehaviorBindable.swift */; };
-		E274C4452929FEDD00D575A7 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4442929FEDD00D575A7 /* BindableProtocol.swift */; };
+		E274C4452929FEDD00D575A7 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C4442929FEDD00D575A7 /* Bindable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,7 +218,7 @@
 		E268CDBA2671EFFB00D95FA8 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		E268CDBC2671F10000D95FA8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E274C4422929FE0300D575A7 /* BehaviorBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorBindable.swift; sourceTree = "<group>"; };
-		E274C4442929FEDD00D575A7 /* BindableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableProtocol.swift; sourceTree = "<group>"; };
+		E274C4442929FEDD00D575A7 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,7 +588,7 @@
 			children = (
 				E268CD6B2671DD0800D95FA8 /* Bindable_Deprecated.swift */,
 				E274C4422929FE0300D575A7 /* BehaviorBindable.swift */,
-				E274C4442929FEDD00D575A7 /* BindableProtocol.swift */,
+				E274C4442929FEDD00D575A7 /* Bindable.swift */,
 				E231DB9E292C842300926617 /* PublishBindable.swift */,
 			);
 			path = Bindable;
@@ -790,7 +790,7 @@
 				E266BCFA2673306500C139BB /* UITableView+Extensions.swift in Sources */,
 				E231DB9F292C842400926617 /* PublishBindable.swift in Sources */,
 				E266BCE226730E1B00C139BB /* URLSchemeHost.swift in Sources */,
-				E274C4452929FEDD00D575A7 /* BindableProtocol.swift in Sources */,
+				E274C4452929FEDD00D575A7 /* Bindable.swift in Sources */,
 				E266BCDC2672C92E00C139BB /* Post.swift in Sources */,
 				E268CD732671DD6000D95FA8 /* APIClient.swift in Sources */,
 				E266BD0F26734EFB00C139BB /* PostPictureDetailViewController.swift in Sources */,

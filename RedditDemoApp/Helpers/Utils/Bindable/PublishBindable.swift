@@ -7,7 +7,7 @@
 
 import Dispatch
 
-final class PublishBindable<T>: BindableProtocol {
+final class PublishBindable<T>: Bindable {
 
     typealias Listener = ((T) -> Void)
     private var listener: Listener?

@@ -1,5 +1,5 @@
 //
-//  BindableProtocol.swift
+//  Bindable.swift
 //  RedditDemoApp
 //
 //  Created by Alonso on 20/11/22.
@@ -7,7 +7,7 @@
 
 import Dispatch
 
-protocol BindableProtocol {
+protocol Bindable {
 
     associatedtype Model
 
