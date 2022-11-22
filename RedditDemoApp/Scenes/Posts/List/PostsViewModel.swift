@@ -11,9 +11,9 @@ final class PostsViewModel: PostsViewModelProtocol {
 
     private let interactor: PostsInteractorProtocol
 
-    private(set) var viewState: Bindable<PostsViewState> = Bindable(.initial)
-    private(set) var didUpdatePost: Bindable<Int?> = Bindable(nil)
-    private(set) var didRemovePost: Bindable<Int?> = Bindable(nil)
+    private(set) var viewState: Bindable_Deprecated<PostsViewState> = Bindable_Deprecated(.initial)
+    private(set) var didUpdatePost: Bindable_Deprecated<Int?> = Bindable_Deprecated(nil)
+    private(set) var didRemovePost: Bindable_Deprecated<Int?> = Bindable_Deprecated(nil)
 
     private var posts: [Post] = []
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Bindable<T> {
+final class Bindable_Deprecated<T> {
 
     typealias Listener = ((T) -> Void)
     private var listener: Listener?
@@ -47,7 +47,7 @@ final class Bindable<T> {
 
 }
 
-extension Bindable where T == Void {
+extension Bindable_Deprecated where T == Void {
 
     func fire() {
         sendValue()

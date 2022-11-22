@@ -9,8 +9,8 @@ import UIKit
 
 protocol LoginViewModelProtocol {
 
-    var startLoading: Bindable<Bool> { get }
-    var didReceiveError: Bindable<Error?> { get }
+    var startLoading: Bindable_Deprecated<Bool> { get }
+    var didReceiveError: Bindable_Deprecated<Error?> { get }
 
     var loginDidFinish: (() -> Void)? { get set }
 
