@@ -19,9 +19,7 @@ final class LoginInteractor: LoginInteractorProtocol {
 
     // MARK: - LoginInteractorProtocol
 
-    func getAccessToken(credential: String,
-                        code: String,
-                        completion: @escaping (Result<String, Error>) -> Void) {
+    func getAccessToken(credential: String, code: String) async -> Result<String, Error> {
         let redirectUri = AppConstants.authRedirectUri
         authClient.getAccessToken(credential: credential, code: code, redirectUri: redirectUri) { result in
             switch result {

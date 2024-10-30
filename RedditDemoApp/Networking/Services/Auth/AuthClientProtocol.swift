@@ -9,7 +9,6 @@ protocol AuthClientProtocol {
 
     func getAccessToken(credential: String,
                         code: String,
-                        redirectUri: String,
-                        completion: @escaping (Result<AccessTokenResponse, APIError>) -> Void)
+                        redirectUri: String) async throws -> AccessTokenResponse
 
 }
