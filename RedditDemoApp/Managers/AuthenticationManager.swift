@@ -22,6 +22,10 @@ import Foundation
         return accessToken != nil
     }
 
+    func setAccessToken(_ accessToken: String) {
+        self.accessToken = accessToken
+    }
+
     /**
      * Signs out the user.
      */
