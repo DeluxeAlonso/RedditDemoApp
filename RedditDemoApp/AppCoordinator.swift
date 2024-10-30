@@ -12,8 +12,8 @@ class AppCoordinator {
 
     private var currentRootCoordinator: Coordinator?
 
-    func getInitialViewController() -> UIViewController {
-        if AuthenticationManager.shared.isUserLoggedIn() {
+    func getInitialViewController() async -> UIViewController {
+        if await AuthenticationManager.shared.isUserLoggedIn() {
             return builPostsSplitViewController()
         } else {
             return builLoginViewController()

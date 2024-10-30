@@ -24,7 +24,7 @@ protocol PostsViewModelProtocol {
     */
     //func getTopPosts(shouldRefresh: Bool)
 
-    func getTopPosts(shouldRefresh: Bool) async
+    func getTopPosts(shouldRefresh: Bool)
 
     /**
      * Marks post at a specific index as read.

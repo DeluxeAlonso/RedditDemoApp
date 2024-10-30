@@ -19,8 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         appCoordinator = AppCoordinator()
 
-        window?.rootViewController = appCoordinator.getInitialViewController()
-        window?.makeKeyAndVisible()
+        Task { @MainActor in
+            window?.rootViewController = await appCoordinator.getInitialViewController()
+            window?.makeKeyAndVisible()
+        }
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -31,7 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         switch urlSchemeHost {
         case .authCompletion:
-            AuthenticationManager.shared.handleAuthCompletionURLScheme(url)
+            Task {
+                await AuthenticationManager.shared.handleAuthCompletionURLScheme(url)
+            }
         }
     }
 

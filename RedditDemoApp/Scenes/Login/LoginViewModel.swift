@@ -35,12 +35,12 @@ final class LoginViewModel: LoginViewModelProtocol {
     func getAccessToken(with code: String) {
         startLoading.value = true
         let credential = buildAuthCredential()
-        interactor.getAccessToken(credential: credential, code: code) { result in
-            self.startLoading.value = false
-            switch result {
-            case .success:
+        Task {
+            do {
+                // TODO: - Move authentication manager to login view model
+                let response = try await interactor.getAccessToken(credential: credential, code: code)
                 self.loginDidFinish?()
-            case .failure(let error):
+            } catch {
                 self.didReceiveError.value = error
             }
         }
