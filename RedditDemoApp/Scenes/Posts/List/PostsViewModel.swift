@@ -29,9 +29,9 @@ final class PostsViewModel: PostsViewModelProtocol {
 
     // MARK: - PostsViewModelProtocol
 
-    func getTopPosts(shouldRefresh: Bool) {
+    func getTopPosts(shouldRefresh: Bool) async {
         let currentAfter = shouldRefresh ? nil : viewState.value.currentAfter
-        fetchTopPostsAsync(after: currentAfter)
+        await fetchTopPostsAsync(after: currentAfter)
     }
 
     func markAsRead(at index: Int) {
@@ -94,8 +94,8 @@ final class PostsViewModel: PostsViewModelProtocol {
         }
     }
 
-    private func fetchTopPostsAsync(after: String?) {
-        Task {
+    private func fetchTopPostsAsync(after: String?) async {
+        //Task {
             do {
                 let posts = try await interactor.getTopPosts(after: after)
                 let postsResult = processResult(posts, currentAfter: after, currentPosts: self.posts)
@@ -103,7 +103,7 @@ final class PostsViewModel: PostsViewModelProtocol {
             } catch {
                 self.viewState.value = .error(error)
             }
-        }
+        //}
     }
 
     private func processResult(_ posts: [Post],

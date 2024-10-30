@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 protocol PostsViewModelProtocol {
 
     var viewState: Bindable_Deprecated<PostsViewState> { get }
@@ -20,7 +21,9 @@ protocol PostsViewModelProtocol {
     * - Parameters:
     *      - shouldRefresh: indicates if posts should be reset.
     */
-    func getTopPosts(shouldRefresh: Bool)
+    //func getTopPosts(shouldRefresh: Bool)
+
+    func getTopPosts(shouldRefresh: Bool) async
 
     /**
      * Marks post at a specific index as read.

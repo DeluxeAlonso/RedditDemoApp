@@ -27,7 +27,9 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
         setupUI()
         setupBindings()
 
-        viewModel?.getTopPosts(shouldRefresh: true)
+        Task {
+            await viewModel?.getTopPosts(shouldRefresh: true)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +73,9 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
         prefetchDataSource = TableViewDataSourcePrefetching(cellCount: viewModel.numberOfPosts(),
                                                             needsPrefetch: viewModel.needsPrefetch,
                                                             prefetchHandler: { [weak self] in
-                                                                self?.viewModel?.getTopPosts(shouldRefresh: false)
+            Task {
+                await self?.viewModel?.getTopPosts(shouldRefresh: false)
+            }
                                                             })
         tableView.prefetchDataSource = prefetchDataSource
     }
@@ -122,7 +126,9 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
     // MARK: - Selectors
 
     @objc private func refreshControlAction() {
-        viewModel?.getTopPosts(shouldRefresh: true)
+        Task {
+            await viewModel?.getTopPosts(shouldRefresh: true)
+        }
     }
 
     @objc private func imageDownloadError(_ image: UIImage,
