@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 class AppCoordinator {
 
     private var currentRootCoordinator: Coordinator?

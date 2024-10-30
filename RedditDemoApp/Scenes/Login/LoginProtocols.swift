@@ -44,6 +44,7 @@ protocol LoginInteractorProtocol {
 
 }
 
+@MainActor
 protocol LoginCoordinatorProtocol: AnyObject {
 
     func showAuthPermission(for authPermissionURL: URL?,

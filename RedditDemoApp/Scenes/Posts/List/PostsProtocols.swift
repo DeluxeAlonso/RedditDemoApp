@@ -8,6 +8,7 @@
 import Foundation
 
 
+@MainActor
 protocol PostsViewModelProtocol {
 
     var viewState: Bindable_Deprecated<PostsViewState> { get }
