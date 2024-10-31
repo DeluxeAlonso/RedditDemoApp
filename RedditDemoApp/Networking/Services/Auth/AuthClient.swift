@@ -26,15 +26,9 @@ class AuthClient: APIClient, AuthClientProtocol {
 
     // MARK: - AuthClientProtocol
 
-    func getAccessToken(credential: String,
-                        code: String,
-                        redirectUri: String,
-                        completion: @escaping (Result<AccessTokenResponse, APIError>) -> Void) {
+    func getAccessToken(credential: String, code: String, redirectUri: String) async throws -> AccessTokenResponse {
         let request = AuthProvider.getAccessToken(encodedCredential: credential, code: code, redirectUri: redirectUri).request
-        fetch(with: request, decode: { json -> AccessTokenResponse? in
-            guard let requestToken = json as? AccessTokenResponse else { return nil }
-            return requestToken
-        }, completion: completion)
+        return try await fetch(with: request, decodingType: AccessTokenResponse.self)
     }
 
 }

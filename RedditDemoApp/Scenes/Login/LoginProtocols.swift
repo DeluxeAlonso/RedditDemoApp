@@ -38,12 +38,11 @@ protocol LoginInteractorProtocol {
      *      - code: access code to be used.
      *      - completion: called on completion containing the fetched access token.
      */
-    func getAccessToken(credential: String,
-                        code: String,
-                        completion: @escaping (Result<String, Error>) -> Void)
+    func getAccessToken(credential: String, code: String) async throws -> String
 
 }
 
+@MainActor
 protocol LoginCoordinatorProtocol: AnyObject {
 
     func showAuthPermission(for authPermissionURL: URL?,

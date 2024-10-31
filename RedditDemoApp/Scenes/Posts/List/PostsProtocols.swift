@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+@MainActor
 protocol PostsViewModelProtocol {
 
     var viewState: Bindable_Deprecated<PostsViewState> { get }
@@ -20,6 +22,8 @@ protocol PostsViewModelProtocol {
     * - Parameters:
     *      - shouldRefresh: indicates if posts should be reset.
     */
+    //func getTopPosts(shouldRefresh: Bool)
+
     func getTopPosts(shouldRefresh: Bool)
 
     /**
@@ -47,7 +51,6 @@ protocol PostsViewModelProtocol {
 
 protocol PostsInteractorProtocol {
 
-    func getTopPosts(after: String?, completion: @escaping (Result<[Post], Error>) -> Void)
     func getTopPosts(after: String?) async throws -> [Post]
 
     func markPostAsRead(id: String, completion: @escaping (Result<Void, Error>) -> Void)

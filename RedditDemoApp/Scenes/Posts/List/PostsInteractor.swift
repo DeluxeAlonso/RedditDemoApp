@@ -17,34 +17,8 @@ final class PostsInteractor: PostsInteractorProtocol {
         self.visitedPostStore = visitedPostStore
     }
 
-    func getTopPosts(after: String?, completion: @escaping (Result<[Post], Error>) -> Void) {
-        guard let accessToken = AuthenticationManager.shared.accessToken else {
-            completion(.failure(APIError.requestFailed))
-            return
-        }
-
-        let visitedPosts = visitedPostStore.findAll()
-        let visitedIds = visitedPosts.map { $0.id }
-
-        postClient.getTopPosts(accessToken: accessToken, after: after, limit: 50) { result in
-            switch result {
-            case .success(let response):
-                let posts = self.buildPosts(from: response, and: visitedIds)
-                completion(.success(posts))
-            case .failure(let error):
-                switch error {
-                case .notAuthenticated:
-                    AuthenticationManager.shared.signOut()
-                default:
-                    break
-                }
-                completion(.failure(error))
-            }
-        }
-    }
-
     func getTopPosts(after: String?) async throws -> [Post] {
-        guard let accessToken = AuthenticationManager.shared.accessToken else {
+        guard let accessToken = await AuthenticationManager.shared.accessToken else {
             throw APIError.requestFailed
         }
 
@@ -55,7 +29,7 @@ final class PostsInteractor: PostsInteractorProtocol {
             let response = try await postClient.getTopPosts(accessToken: accessToken, after: after, limit: 50)
             return buildPosts(from: response, and: visitedIds)
         } catch {
-            if case APIError.notAuthenticated = error { AuthenticationManager.shared.signOut() }
+            if case APIError.notAuthenticated = error { await AuthenticationManager.shared.signOut() }
             throw error
         }
     }

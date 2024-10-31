@@ -17,7 +17,7 @@ final class PostsCoordinator: NSObject, PostsCoordinatorProtocol {
         self.navigationController = navigationController
     }
 
-    func start() {
+    @MainActor func start() {
         let client = PostClient()
         let store: PersistenceStore<VisitedPost> = PersistenceStore(CoreDataStack.shared.mainContext)
         let interactor = PostsInteractor(postClient: client, visitedPostStore: store)

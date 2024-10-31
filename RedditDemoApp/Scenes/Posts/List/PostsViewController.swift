@@ -65,14 +65,14 @@ class PostsViewController: UIViewController, Storyboarded, Alertable {
         refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
-
+    
     private func configureTableViewPrefetchDataSource() {
         guard let viewModel = viewModel else { return }
         prefetchDataSource = TableViewDataSourcePrefetching(cellCount: viewModel.numberOfPosts(),
                                                             needsPrefetch: viewModel.needsPrefetch,
                                                             prefetchHandler: { [weak self] in
-                                                                self?.viewModel?.getTopPosts(shouldRefresh: false)
-                                                            })
+            self?.viewModel?.getTopPosts(shouldRefresh: false)
+        })
         tableView.prefetchDataSource = prefetchDataSource
     }
 

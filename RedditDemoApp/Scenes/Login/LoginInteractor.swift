@@ -19,20 +19,12 @@ final class LoginInteractor: LoginInteractorProtocol {
 
     // MARK: - LoginInteractorProtocol
 
-    func getAccessToken(credential: String,
-                        code: String,
-                        completion: @escaping (Result<String, Error>) -> Void) {
+    func getAccessToken(credential: String, code: String) async throws -> String {
         let redirectUri = AppConstants.authRedirectUri
-        authClient.getAccessToken(credential: credential, code: code, redirectUri: redirectUri) { result in
-            switch result {
-            case .success(let response):
-                let accessToken = response.accessToken
-                AuthenticationManager.shared.accessToken = accessToken
-                completion(.success(accessToken))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+        let response = try await authClient.getAccessToken(credential: credential, code: code, redirectUri: redirectUri)
+        let accessToken = response.accessToken
+        await AuthenticationManager.shared.setAccessToken(accessToken)
+        return response.accessToken
     }
 
 }

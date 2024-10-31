@@ -7,12 +7,12 @@
 
 import Foundation
 
-class AuthenticationManager {
+@globalActor actor AuthenticationManager {
 
     static let shared = AuthenticationManager()
 
     @KeychainStorage(key: Constants.accessTokenKey)
-    var accessToken: String?
+    private(set) var accessToken: String?
 
     /**
      * Checks if the user is logged in into the app.
@@ -20,6 +20,10 @@ class AuthenticationManager {
      */
     func isUserLoggedIn() -> Bool {
         return accessToken != nil
+    }
+
+    func setAccessToken(_ accessToken: String) {
+        self.accessToken = accessToken
     }
 
     /**
