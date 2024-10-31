@@ -12,7 +12,7 @@ import Foundation
     static let shared = AuthenticationManager()
 
     @KeychainStorage(key: Constants.accessTokenKey)
-    var accessToken: String?
+    private(set) var accessToken: String?
 
     /**
      * Checks if the user is logged in into the app.
