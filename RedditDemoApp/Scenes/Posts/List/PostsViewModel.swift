@@ -36,15 +36,10 @@ final class PostsViewModel: PostsViewModelProtocol {
 
     func markAsRead(at index: Int) {
         let post = posts[index]
-        interactor.markPostAsRead(id: post.id) { result in
-            switch result {
-            case .success:
-                post.read = true
-                self.didUpdatePost.value = index
-            case .failure:
-                // We fail silently
-                break
-            }
+        Task {
+            try? await interactor.markPostAsRead(id: post.id)
+            post.read = true
+            self.didUpdatePost.value = index
         }
     }
 
