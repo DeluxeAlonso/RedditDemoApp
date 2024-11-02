@@ -53,7 +53,7 @@ protocol PostsInteractorProtocol {
 
     func getTopPosts(after: String?) async throws -> [Post]
 
-    func markPostAsRead(id: String, completion: @escaping (Result<Void, Error>) -> Void)
+    func markPostAsRead(id: String) async throws
 
 }
 
