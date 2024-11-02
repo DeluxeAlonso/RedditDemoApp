@@ -8,13 +8,14 @@
 import XCTest
 @testable import RedditDemoApp
 
+@MainActor
 class PostsTests: XCTestCase {
 
     private var mockInteractor: MockPostsInteractor!
     private var viewModelToTest: PostsViewModel!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
+    override func setUp() async throws {
+        try await super.setUp()
         mockInteractor = MockPostsInteractor()
         viewModelToTest = PostsViewModel(interactor: mockInteractor)
     }
@@ -95,8 +96,8 @@ class PostsTests: XCTestCase {
         viewModelToTest.getTopPosts(shouldRefresh: false)
         // Seconds fetch should return empty values to simulate no more pages
         _ = Task.delayed(byTimeInterval: 0.5) {
-            self.mockInteractor.getTopPostsResult = Result.success([])
-            self.viewModelToTest.getTopPosts(shouldRefresh: false)
+            await self.mockInteractor.getTopPostsResult = Result.success([])
+            await self.viewModelToTest.getTopPosts(shouldRefresh: false)
         }
         //Assert
         wait(for: [expectation], timeout: 5)

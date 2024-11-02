@@ -39,6 +39,14 @@ final class PostsInteractor: PostsInteractorProtocol {
         completion(.success(Void()))
     }
 
+    func markPostAsRead(id: String) async throws {
+        await withCheckedContinuation { continuation in
+            visitedPostStore.saveVisitedPost(id: id) { _ in
+                continuation.resume()
+            }
+        }
+    }
+
     private func buildPosts(from response: ListingResponse<PostResponse>, and visitedIds: [String]) -> [Post] {
         let listingData = response.data.children
         let posts = listingData.map { dataResponse -> Post in

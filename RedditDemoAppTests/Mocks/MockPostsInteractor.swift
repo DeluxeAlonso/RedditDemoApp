@@ -10,16 +10,12 @@ import Foundation
 
 class MockPostsInteractor: PostsInteractorProtocol {
 
+    private(set) var markPostAsReadCallCount = 0
+    func markPostAsRead(id: String) async throws {
+        markPostAsReadCallCount += 1
+    }
+
     var getTopPostsResult: Result<[Post], Error>!
-    func getTopPosts(after: String?, completion: @escaping (Result<[Post], Error>) -> Void) {
-        completion(getTopPostsResult)
-    }
-
-    var markPostAsReadResult: Result<Void, Error>!
-    func markPostAsRead(id: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        completion(markPostAsReadResult)
-    }
-
     func getTopPosts(after: String?) async throws -> [Post] {
         return try getTopPostsResult.get()
     }
